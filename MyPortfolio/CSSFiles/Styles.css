@@ -1,0 +1,52 @@
+/*element selector styles*/
+
+img
+{
+    width: 150px;
+    height: 200px;
+    text-align: center;
+}
+
+hr 
+{
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+/*id selector styles*/
+
+#Intro
+{
+    text-align: center;
+}
+
+/*class selector styles*/
+
+.center
+{
+    
+}
+
+.vl 
+{
+    border-left: 1px solid black;
+    height: 10px;
+}
