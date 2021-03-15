@@ -35,16 +35,68 @@
     <hr> <!--this is a horizontal line-->
 
     <center>
-        <form action="../PHPFiles/Send.php" method="post">
-            <p>Name: <input type="text" name="name" /></p>
-            <p>Email: <input type="text" name="email" /></p>
-            <p>Subject: <input type="text" name="subject" /></p>
-            <p>Message: <textarea type="text" name="message"></textarea></p>
-            <p><input type="submit" onclick="mailfunction"/></p>
+        <!--<form action="../JavaScriptFiles/SendMail.js" method="post">-->
+        <form>
+            <!--<p>Name: <input type="text" name="name" /></p>
+            <p>Email: <input type="text" name="email" id="useremail"/></p>
+            <p>Subject: <input type="text" name="subject" id="subject"/></p>
+            <p>Message: <textarea type="text" name="message" id="message"></textarea></p>
+            <p><input type="submit" onclick="mailfunction()"/></p>-->
+            <p><input type="text" name="name" placeholder="Name"/></p>
+            <p><input type="text" name="email" id="useremail" placeholder="Email"/></p>
+            <p><input type="text" name="subject" id="subject" placeholder="Subject"/></p>
+            <p><textarea type="text" name="message" id="message" placeholder="Message"></textarea></p>
+            <!--<input type="submit" onclick="mailfunction()"/>-->
+            <p><button onclick="mailfunction()">Submit</button></p>
         </form>
     </center>
 
+    <script>
+function mailfunction()
+{
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
+  var nodemailer = require('nodemailer');
 
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: 
+    {
+      user: 'srizv82@gmail.com',
+      pass: 'Ocelot02'
+    }
+  });
+
+  var mailOptions = 
+  {
+    //from: 'srizv82@gmail.com',
+    /*from: document.getElementById("useremail").value,
+    to: 'srizv82@gmail.com',
+    //subject: 'Sending Email using Node.js',
+    subject: document.getElementById("subject").value,
+    text: document.getElementById("message").value*/
+    
+
+    from: 'srizv82@gmail.com',
+    to: 'srizv82@gmail.com',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) 
+    {
+      console.log(error);
+      //document.getElementById("mailmessage").innerHTML = error;
+    } 
+    else
+    {
+      console.log('Email sent: ' + info.response);
+      //document.getElementById("mailmessage").innerHTML = 'Email sent: ' + info.response;
+    }
+  });
+}
+
+    </script>
     <p id="mailmessage"></p>
 </body>
 </html>
