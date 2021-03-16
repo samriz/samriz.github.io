@@ -38,11 +38,32 @@ p
     text-align: center;
 }
 
-/*class selector styles*/
-/*.hidden 
+#beforearrow
+{
+    display: inline;
+}
+
+#afterarrow
 {
     display:none;
-}*/
+}
+
+#beforearrow2
+{
+    display: inline;
+}
+
+#afterarrow2
+{
+    display:none;
+}
+
+/*class selector styles*/
+.hidden 
+{
+    display:none;
+}
+
 /*.center
 {
     

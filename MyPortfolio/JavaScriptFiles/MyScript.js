@@ -38,6 +38,53 @@ function PopulateFileWithMenu()
     CreateMenu(links,extension);
 }
 
+function HideUnhide()
+{
+    var hiddenItems = document.getElementsByClassName("hidden");
+    for(let i = 0; i < hiddenItems.length; i++)
+    {
+        hiddenItems[i].style.display
+    }
+}
+
+function ChangeArrow()
+{
+    var expandItems = document.getElementsByClassName("expand");
+    var collapseItems = document.getElementsByClassName("collapse");
+    var before = document.getElementById("beforearrow");
+    var after = document.getElementById("afterarrow");
+
+    if(after.style.display === "none")
+    {
+        before.style.display = "none";
+        after.style.display = "inline";       
+    }
+    else
+    {
+        before.style.display = "inline";
+        after.style.display = "none";
+    }
+}
+
+function ChangeArrow2()
+{
+    var expandItems = document.getElementsByClassName("expand");
+    var collapseItems = document.getElementsByClassName("collapse");
+    var before = document.getElementById("beforearrow2");
+    var after = document.getElementById("afterarrow2");
+
+    if(after.style.display === "none")
+    {
+        before.style.display = "none";
+        after.style.display = "inline";       
+    }
+    else
+    {
+        before.style.display = "inline";
+        after.style.display = "none";
+    }
+}
+
 /*function AddLineAfterIntro()
 {
     var hrNode = document.createElement("hr");
