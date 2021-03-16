@@ -7,40 +7,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!--React-->
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
     <!--My CSS and JavaScript below-->
     <link rel="stylesheet" href="../CSSFiles/Styles.css">
-    <script src="../JavaScriptFiles/MyScript.js"></script>
-    <script src="../JavaScriptFiles/SendMail.js"></script>
+    <script type="text/javascript" src="../JavaScriptFiles/MyScript.js"></script>
+    <script type="text/javascript" src="../JavaScriptFiles/SendMail.js"></script>
 
     <title>Sameer Rizvi &mdash; About</title>
 </head>
 
 <body>
-    <div class="Menu"></div>
-    <script>
-        var extension = ".html";
-        var links = new Array("Home" + extension, "Resume" + extension, "About"  + extension);
-        CreateMenu(links,extension);
-    </script>
-    <div id="Intro" class="jumbotron">
+    <div class="menu"></div>
+    <div id="intro" class="jumbotron">
         <h1>Sameer Rizvi</h1>
         <p>
-            <!--<img src="C:\Users\srizv\OneDrive\Documents\My Portfolio\Pictures\LinkedInPicture1.png" id="ProfilePic" class="center">-->
-            <img src="../Pictures/LinkedInPicture1.png" id="ProfilePic" class="center">
+            <img src="../Pictures/LinkedInPicture1.png" id="profilepic" class="center">
         </p>
-        <!--<p>For Inquiries: <a href = "mailto: srizv82@gmail.com">srizv82@gmail.com</a></p>-->
-        <a href = "./Message.html">For Inquiries</a>
+        <p>For Inquiries: <a href = "mailto: srizv82@gmail.com">srizv82@gmail.com</a></p>
+        <!--<a href = "./Message.html">For Inquiries</a>-->
     </div>
     
     <hr> <!--this is a horizontal line-->
 
-    <h3><a name="Education"></a>Education</h3>
-    <center><table cellspacing="5" cellpadding="5" width="90%" border="0">
+    <p>(Click on headers to expand)</p>
+    <!--<h3><a name="education"></a>Education</h3>-->
+    <h3 data-toggle="collapse" href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable">Education</h3>
+    <center><table class="collapse" id="educationtable" cellspacing="5" cellpadding="5" width="90%" border="0">
     <tbody>
         <tr valign="TOP">
         <td>
@@ -55,7 +46,6 @@
         </ul>
         </td>
         </tr>
-
     <tr valign="TOP">
         <td>
         2015:</td> 
@@ -70,8 +60,9 @@
     </tr>
     </tbody></table></center>
 
-    <h3><a name="Employment"></a>Professional Experience</h3>
-    <center><table cellspacing="5" cellpadding="5" width="90%" border="0">
+    <!--<h3><a name="employment"></a>Professional Experience</h3>-->
+    <h3 data-toggle="collapse" href="#employmenttable" role="button" aria-expanded="false" aria-controls="employmenttable">Professional Experience</h3>
+    <center><table class="collapse" id="employmenttable" cellspacing="5" cellpadding="5" width="90%" border="0">
     <tbody>
         <tr valign="TOP">
         <td>
@@ -140,4 +131,7 @@
     </tr>
     </tbody></table></center>   
 </body>
+<script>
+    PopulateFileWithMenu();
+</script>
 </html>

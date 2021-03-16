@@ -7,33 +7,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!--React-->
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-
     <!--My CSS and JavaScript below-->
     <link rel="stylesheet" href="../CSSFiles/Styles.css">
-    <script src="../JavaScriptFiles/MyScript.js"></script>
-    <script src="../JavaScriptFiles/SendMail.js"></script>
+    <script type="text/javascript" src="../JavaScriptFiles/MyScript.js"></script>
+    <script type="text/javascript" src="../JavaScriptFiles/SendMail.js"></script>
 
     <title>Sameer Rizvi &mdash; Inquiry</title>
 </head>
 
 <body>
-    <div class="Menu"></div>
-    <script>
-        var extension = ".html";
-        var links = new Array("Home" + extension, "Resume" + extension, "About"  + extension);
-        CreateMenu(links,extension);
-    </script>
-    <div id="Intro" class="jumbotron">
+    <div class="menu"></div>
+    <div id="intro" class="jumbotron">
         <h1>Inquiries</h1>
-        <!--<p>For Inquiries: <a href = "mailto: srizv82@gmail.com">srizv82@gmail.com</a></p>-->
     </div>
-    
     <hr> <!--this is a horizontal line-->
-
     <center>
         <!--<form action="../JavaScriptFiles/SendMail.js" method="post">-->
         <form>
@@ -50,53 +37,9 @@
             <p><button onclick="mailfunction()">Submit</button></p>
         </form>
     </center>
-
-    <script>
-function mailfunction()
-{
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED='0';
-  var nodemailer = require('nodemailer');
-
-  var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: 
-    {
-      user: 'srizv82@gmail.com',
-      pass: 'Ocelot02'
-    }
-  });
-
-  var mailOptions = 
-  {
-    //from: 'srizv82@gmail.com',
-    /*from: document.getElementById("useremail").value,
-    to: 'srizv82@gmail.com',
-    //subject: 'Sending Email using Node.js',
-    subject: document.getElementById("subject").value,
-    text: document.getElementById("message").value*/
-    
-
-    from: 'srizv82@gmail.com',
-    to: 'srizv82@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
-  };
-
-  transporter.sendMail(mailOptions, function(error, info){
-    if (error) 
-    {
-      console.log(error);
-      //document.getElementById("mailmessage").innerHTML = error;
-    } 
-    else
-    {
-      console.log('Email sent: ' + info.response);
-      //document.getElementById("mailmessage").innerHTML = 'Email sent: ' + info.response;
-    }
-  });
-}
-
-    </script>
     <p id="mailmessage"></p>
 </body>
+<script>
+  PopulateFileWithMenu();
+</script>
 </html>
