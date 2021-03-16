@@ -26,10 +26,7 @@ function CreateMenu(links, extension)
     }
 }
 
-function SetLink(link)
-{
-    return "./" + link;
-}
+function SetLink(link){return "./" + link;}
 
 function PopulateFileWithMenu()
 {

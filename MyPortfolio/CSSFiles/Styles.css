@@ -33,6 +33,16 @@ p
 
 /*id selector styles*/
 
+#extlinksdiv
+{
+    /*text-align: center;*/    
+}
+
+#educationdiv
+{
+    text-align: center;    
+}
+
 #intro
 {
     text-align: center;
