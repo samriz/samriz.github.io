@@ -22,13 +22,30 @@ hr
     margin-right: auto;*/
 }
 
+h1
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+h3
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
 p 
 {
+    /*font-family: Arial, Helvetica, sans-serif;*/
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    color:black;
+}
+
+td
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 /*id selector styles*/
