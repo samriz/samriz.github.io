@@ -48,6 +48,17 @@ td
     /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
+footer 
+{
+	/*position: fixed;*/
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	/*background-color: brown;*/
+	/*color: white;*/
+	text-align: center;
+}
+
 /*id selector styles*/
 
 #extlinksdiv
@@ -60,7 +71,17 @@ td
     text-align: center;    
 }
 
-#intro
+#homeintro
+{
+    text-align: center;
+}
+
+#messageintro
+{
+    text-align: center;
+}
+
+#aboutintro
 {
     text-align: center;
 }
@@ -86,6 +107,12 @@ td
 }
 
 /*class selector styles*/
+
+.menu
+{
+    /*position:fixed;*/
+}
+
 .hidden 
 {
     display:none;
