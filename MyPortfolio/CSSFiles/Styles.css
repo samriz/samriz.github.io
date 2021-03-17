@@ -1,5 +1,11 @@
 /*element selector styles*/
 
+html 
+{
+    width: 100%;
+    height: 100%;
+}
+
 img
 {
     width: 150px;
@@ -22,16 +28,6 @@ hr
     margin-right: auto;*/
 }
 
-h1
-{
-    /*font-family: Arial, Helvetica, sans-serif;*/
-}
-
-h3
-{
-    /*font-family: Arial, Helvetica, sans-serif;*/
-}
-
 p 
 {
     /*font-family: Arial, Helvetica, sans-serif;*/
@@ -43,9 +39,11 @@ p
     color:black;
 }
 
-td
+body
 {
-    /*font-family: Arial, Helvetica, sans-serif;*/
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 footer 
@@ -57,6 +55,21 @@ footer
 	/*background-color: brown;*/
 	/*color: white;*/
 	text-align: center;
+}
+
+h1
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+h3
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+td
+{
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 /*id selector styles*/
@@ -106,11 +119,27 @@ footer
     display:none;
 }
 
+#menuitem0
+{
+    margin-left: 5;
+}
+
 /*class selector styles*/
 
 .menu
 {
-    /*position:fixed;*/
+    background-color: white;
+    width: 100%;
+}
+
+.menuitem
+{
+    font-size: 20px;
+}
+
+.docked
+{
+    position:fixed;
 }
 
 .hidden 

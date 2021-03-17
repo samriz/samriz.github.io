@@ -11,6 +11,7 @@ function CreateMenu(links, extension)
         //aTags[i].setAttribute("href", "./" + links[i]);
         aTags[i].setAttribute("href", SetLink(links[i]));
         aTags[i].setAttribute("class", "menuitem");
+        aTags[i].setAttribute("id", "menuitem" + i);
         var position = links[i].search(extension);
         var textnode = document.createTextNode(links[i].slice(0,position));
         aTags[i].appendChild(textnode);                
