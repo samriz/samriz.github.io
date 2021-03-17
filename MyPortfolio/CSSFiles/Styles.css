@@ -74,6 +74,10 @@ td
 
 /*id selector styles*/
 
+#banner{
+    text-align: center;
+}
+
 #extlinksdiv
 {
     /*text-align: center;*/    
