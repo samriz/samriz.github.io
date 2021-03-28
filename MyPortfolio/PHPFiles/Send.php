@@ -45,4 +45,8 @@
         ?>
     </center>   
 </body>
+<footer>
+    <hr>
+    <p>Copyright © 2021 Sameer Rizvi</p>
+</footer>
 </html>
