@@ -1,5 +1,5 @@
 <!DOCTYPE>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta name="author" content="Sameer Rizvi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
     <!--My CSS and JavaScript below-->
     <link rel="stylesheet" href="../CSSFiles/Styles.css">
@@ -27,15 +30,15 @@
         <form name="emailform" id="emailform" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f" method="POST">
             <div class="form-row justify-content-center">
                 <div class="col-md-2">
-                    <p><input type="text" name="name" placeholder="Name" class="form-control" required/></p>
+                    <p><input type="text" name="name" id="name" ng-model="name" placeholder="Name" class="form-control" minlength="1" required/></p>
                 </div>
                 <div class="col-md-2">
-                    <p><input type="text" name="email" id="useremail" placeholder="Email" class="form-control" required/></p>
+                    <p><input type="text" name="useremail" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" required/></p>
                 </div>
             </div>
             <div class="form-row justify-content-center">
                 <div class="col-md-4">
-                    <p><textarea type="text" name="message" id="message" placeholder="Message" class="form-control" rows="5" required></textarea></p>
+                    <p><textarea type="text" name="message" id="message" placeholder="Message" class="form-control" rows="5" minlength="1" required></textarea></p>
                 </div>
             </div>
             <div class="form-row justify-content-center">

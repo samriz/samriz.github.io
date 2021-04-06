@@ -4,7 +4,7 @@ if(!isset($_POST['send']))
     echo "error; you need to submit the form.";
 }
 $name = $_POST['name'];
-$visitor_email = $_POST['email'];
+$visitor_email = $_POST['useremail'];
 $message = $_POST['message'];
 
 $email_from = 'srizv82@gmail.com';
