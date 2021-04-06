@@ -32,7 +32,7 @@ function SetLink(link){return "./" + link;}
 function PopulateFileWithMenu(extension)
 {
     //var extension = ".html";
-    var links = new Array("Home" + extension, "Resume" + extension, "About"  + extension);
+    var links = new Array("Home" + extension, "Resume" + extension, "About"  + extension, "Contact" + extension);
     CreateMenu(links,extension);
 }
 
