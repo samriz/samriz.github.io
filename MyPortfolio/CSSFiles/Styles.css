@@ -104,26 +104,6 @@ td
     text-align: center;
 }
 
-#beforearrow
-{
-    display: inline;
-}
-
-#afterarrow
-{
-    display:none;
-}
-
-#beforearrow2
-{
-    display: inline;
-}
-
-#afterarrow2
-{
-    display:none;
-}
-
 #menuitem0
 {
     margin-left: 5;

@@ -14,7 +14,6 @@
     <!--My CSS and JavaScript below-->
     <link rel="stylesheet" href="../CSSFiles/Styles.css">
     <script type="text/javascript" src="../JavaScriptFiles/MyScript.js"></script>
-    <script type="text/javascript" src="../JavaScriptFiles/SendMail.js"></script>
 
     <title>Sameer Rizvi &mdash; About</title>
 </head>
@@ -30,19 +29,19 @@
         <p>
             <img src="../Pictures/LinkedInPicture1.png" id="profilepic" class="center">
         </p>
-        <p>For Inquiries: <a href = "mailto: srizv82@gmail.com">srizv82@gmail.com</a></p>
-        <!--<a href = "./Message.html">For Inquiries</a>-->
+        <!--<p>For Inquiries: <a href = "mailto: srizv82@gmail.com">srizv82@gmail.com</a></p>-->
+        <a href = "./Contact.html">Contact Me</a>
     </div>
     
     <hr> <!--this is a horizontal line-->
 
     <p>(Click on headers to expand)</p>
     <!--<h3><a name="education"></a>Education</h3>-->
-    <h3 class="expand" data-toggle="collapse" href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable" onclick="ChangeArrow()">Education
+    <h3 class="expand" data-toggle="collapse" href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable">Education
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="beforearrow" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="beforearrow" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-          </svg>
+          </svg>-->
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="afterarrow" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
           </svg>
@@ -82,13 +81,12 @@
     </tbody></table>
     </center>
     <!--</div>-->
-
     <!--<h3><a name="employment"></a>Professional Experience</h3>-->
     <h3 class="expand" data-toggle="collapse" href="#employmenttable" role="button" aria-expanded="false" aria-controls="employmenttable" onclick="ChangeArrow2()">Professional Experience
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="beforearrow2" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+        <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="beforearrow2" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
-          </svg>
+          </svg>-->
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="afterarrow2" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
           </svg>
@@ -163,10 +161,10 @@
     </tbody></table></center>
     <footer>
         <hr>
-        <p>Copyright © 2021 Sameer Rizvi</p>
+        <p>Copyright &copy; 2021 Sameer Rizvi</p>
     </footer>
 </body>
 <script>
-    PopulateFileWithMenu();
+    PopulateFileWithMenu(".html");
 </script>
 </html>
