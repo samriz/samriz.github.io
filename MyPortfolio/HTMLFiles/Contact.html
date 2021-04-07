@@ -27,7 +27,7 @@
     </div>
     <hr> <!--this is a horizontal line-->
     <center>
-        <form name="emailform" id="emailform" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f" method="POST">
+        <form name="emailform" id="emailform" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f" method="POST" novalidate>
             <div class="form-row justify-content-center">
                 <div class="col-md-2">
                     <p><input type="text" name="name" id="name" ng-model="name" placeholder="Name" class="form-control" minlength="1" required/></p>
@@ -39,6 +39,7 @@
                     <p><input type="email" name="useremail" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" required/></p>
                     <span style="color:red" ng-show="emailform.useremail.$touched && emailform.useremail.$invalid">
                         <span ng-show="emailform.useremail.$error.required">Email is required.</span>
+                        <span ng-show="emailform.useremail.$invalid">Incorrect email.</span>
                     </span>
                 </div>
             </div>
@@ -52,7 +53,7 @@
             </div>
             <div class="form-row justify-content-center">
                 <div class="col-auto">
-                    <p><button type="submit" name="send" id="send" class="btn btn-outline-secondary">Send</button></p>
+                    <p><button type="submit" name="send" id="send" class="btn btn-outline-secondary" ng-disabled="emailform.name.$invalid || emailform.useremail.$invalid || emailform.message.$invalid">Send</button></p>
                 </div>
             </div>      
         </form>
