@@ -31,14 +31,23 @@
             <div class="form-row justify-content-center">
                 <div class="col-md-2">
                     <p><input type="text" name="name" id="name" ng-model="name" placeholder="Name" class="form-control" minlength="1" required/></p>
+                    <span style="color:red" ng-show="emailform.name.$touched && emailform.name.$invalid">
+                        <span ng-show="emailform.name.$error.required">Name is required.</span>
+                    </span>
                 </div>
                 <div class="col-md-2">
                     <p><input type="email" name="useremail" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" required/></p>
+                    <span style="color:red" ng-show="emailform.useremail.$touched && emailform.useremail.$invalid">
+                        <span ng-show="emailform.useremail.$error.required">Email is required.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-row justify-content-center">
                 <div class="col-md-4">
-                    <p><textarea type="text" name="message" id="message" placeholder="Message" class="form-control" rows="5" minlength="1" required></textarea></p>
+                    <p><textarea type="text" name="message" id="message" ng-model="message" placeholder="Message" class="form-control" rows="5" minlength="1" required></textarea></p>
+                    <span style="color:red" ng-show="emailform.message.$touched && emailform.message.$invalid">
+                        <span ng-show="emailform.message.$error.required">Message is required.</span>
+                    </span>
                 </div>
             </div>
             <div class="form-row justify-content-center">
