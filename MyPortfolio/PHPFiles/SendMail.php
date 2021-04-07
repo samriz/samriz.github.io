@@ -4,13 +4,13 @@ if(!isset($_POST['send']))
     echo "error; you need to submit the form.";
 }
 $name = $_POST['name'];
-$visitor_email = $_POST['useremail'];
+$user_email = $_POST['useremail'];
 $message = $_POST['message'];
 
 $email_from = 'srizv82@gmail.com';
 $email_subject = "New Email Form Submission.";
 $email_body = "You have received a new message from $name.\n".
-    "email address: $visitor_email\n".
+    "email address: $user_email\n".
     "Here is the message:\n $message".
 
     $to = 'srizv82@gmail.com';
