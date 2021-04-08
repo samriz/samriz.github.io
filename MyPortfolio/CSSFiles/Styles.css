@@ -35,9 +35,9 @@ p
 
 /*id selector styles*/
 
-#banner
+#homefooter
 {
-    text-align: center;
+    position: absolute;
 }
 
 #educationdiv
@@ -69,6 +69,8 @@ p
 
 .menu
 {
+    overflow: hidden;
+    top: 0;
     background-color: white;
     width: 100%;
 }
@@ -90,7 +92,7 @@ p
 
 .customfooter 
 {
-    /*position: absolute;*/
+    /* position: absolute; */
     bottom: 5;
     width: 100%;
     /*height: 60px;
