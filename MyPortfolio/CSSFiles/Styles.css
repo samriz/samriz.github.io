@@ -35,11 +35,6 @@ p
 
 /*id selector styles*/
 
-#homefooter
-{
-    position: absolute;
-}
-
 #educationdiv
 {
     text-align: center;    
@@ -92,6 +87,9 @@ p
 
 .customfooter 
 {
+    position:fixed;
+    /* left:0px; */
+    height:100px;
     /* position: absolute; */
     bottom: 5;
     width: 100%;
