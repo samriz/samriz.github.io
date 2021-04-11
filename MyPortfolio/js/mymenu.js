@@ -60,7 +60,7 @@
 
     async function PopulateFileWithMenuAsync(extension)
     {
-        var links = new Array("Home", "Resume", "About", "Contact");
+        var links = new Array("home", "resume", "about", "contact");
         for(let i = 0; i < links.length; i++)
         {
             links[i] += extension;
@@ -70,7 +70,7 @@
 
     function PopulateFileWithMenu(extension)
     {
-        var links = new Array("Home", "Resume", "About", "Contact");
+        var links = new Array("home", "resume", "about", "contact");
         for(let i = 0; i < links.length; i++)
         {
             links[i] += extension;
