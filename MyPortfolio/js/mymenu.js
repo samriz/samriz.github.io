@@ -61,9 +61,11 @@
     async function PopulateFileWithMenuAsync(extension)
     {
         var links = new Array("home", "resume", "about", "contact");
-        for(let i = 0; i < links.length; i++)
+
+        for(var link in links)
+        //for(let i = 0; i < links.length; i++)
         {
-            links[i] += extension;
+            links[link] += extension;
         }
         await CreateMenuAsync(links,extension); //waiting on Promise object
     }
@@ -71,9 +73,10 @@
     function PopulateFileWithMenu(extension)
     {
         var links = new Array("home", "resume", "about", "contact");
-        for(let i = 0; i < links.length; i++)
+        for(var link in links)
+        //for(let i = 0; i < links.length; i++)
         {
-            links[i] += extension;
+            links[link] += extension;
         }
         CreateMenu(links,extension);
     }
