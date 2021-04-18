@@ -66,6 +66,11 @@ p
 
 /*class selector styles*/
 
+.errortext
+{
+    color: red;
+}
+
 .intro
 {
     text-align: center;
