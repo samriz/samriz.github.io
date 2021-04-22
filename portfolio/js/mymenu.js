@@ -13,6 +13,10 @@
             aTags[i].setAttribute("href", SetLink(links[i]));
             aTags[i].setAttribute("class", "menuitem");
             aTags[i].setAttribute("id", "menuitem" + i);
+            /*if(links[i] === "resume.html")
+            {
+                aTags[i].setAttribute("target", "resume");
+            }*/
 
             var textnode;
             if(links[i] === "index.html") 
@@ -53,6 +57,10 @@
             aTags[i].setAttribute("href", SetLink(links[i]));
             aTags[i].setAttribute("class", "menuitem");
             aTags[i].setAttribute("id", "menuitem" + i);
+            /*if(links[i] === "resume.html")
+            {
+                aTags[i].setAttribute("target", "resume");
+            }*/
 
             var textnode;
             if(links[i] === "index.html") 
