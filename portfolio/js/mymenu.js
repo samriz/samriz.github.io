@@ -21,7 +21,7 @@
             var textnode;
             if(links[i] === "index.html") 
             {
-                textnode = document.createTextNode("home");
+                textnode = document.createTextNode("sameer rizvi");
             }
             else 
             {
