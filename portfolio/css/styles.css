@@ -1,8 +1,9 @@
 /*element selector styles*/
 
-/* iframe
+a
 { 
-} */
+    color:mediumblue;
+}
 
 img
 {
@@ -65,6 +66,11 @@ p
 }
 
 /*class selector styles*/
+
+.textlink
+{
+    text-decoration:underline;
+}
 
 .errortext
 {
