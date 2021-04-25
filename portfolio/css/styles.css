@@ -85,7 +85,7 @@ body
     background-color: white;
     /* background-color: mediumblue; */
     width: 100%;
-    
+    border-style: outset;
 }
 
 .menuitem
