@@ -43,9 +43,14 @@ body
     text-align: center;    
 } */
 
+#detailsdiv, #contentsdiv
+{
+    padding-left:5px;
+}
+
 #menuitem0
 {
-    margin-left: 5;
+    /* margin-left: 5; */
     font-size: 24px;
 }
 
