@@ -36,6 +36,13 @@ body
     color: black; */
 }
 
+#detailsdiv td
+{
+    border-style: solid;
+    border-width: thin;
+    width: auto;
+}
+
 /*id selector styles*/
 
 /* #educationdiv
