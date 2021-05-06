@@ -2,10 +2,11 @@
 <html lang="en" ng-app>
 <head>
     <link rel="icon" type="image/png" href="./images/favicon.PNG">
+
     <!-- Bootstrap JavaScript below -->
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
     <!--AngularJS-->
     <script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -25,156 +26,157 @@
     <title>Sameer Rizvi &mdash; About</title>
 </head>
 <body>
-    <nav class="menu docked"></nav>
-    <header id="aboutintro" class="intro jumbotron">
-        <h1>About</h1>
-        <p>
-            <figure>
-                <img src="./images/LinkedInPicture1.png" id="profilepic" class="center" alt="Sameer Rizvi"/>
-                <figcaption><a href = "./contact.html" class="textlink" title="Contact">Contact Me</a></figcaption>
-            </figure>
-        </p>
-        <!-- <a href = "./contact.html">Contact Me</a> -->
-    </header>
-    
-    <hr/>
+    <div class="allButFooter">
+        <nav class="menu docked"></nav>
+        <header id="aboutintro" class="intro jumbotron">
+            <h1>About</h1>
+            <p>
+                <figure>
+                    <img src="./images/LinkedInPicture1.png" id="profilepic" class="center" alt="Sameer Rizvi"/>
+                    <figcaption><a href = "./contact.html" class="textlink" title="Contact">Contact Me</a></figcaption>
+                </figure>
+            </p>
+            <!-- <a href = "./contact.html">Contact Me</a> -->
+        </header>
+        
+        <hr/>
 
-    <div id="detailsdiv">
-        <details>       
-            <!-- <h3 href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable">Education</h3> -->
-                <!-- <h3>Education</h3> -->
-            <summary>Education</summary>
-            <table id="educationtable" cellspacing="5" cellpadding="5" width="90%" border="0">
-            <tbody>
-                <tr valign="TOP">
-                    <td>Mid &mdash; Summer 2021 (Expected Completion):</td> 
-                    <td>
-                        Syracuse University &mdash; Syracuse, NY
-                        <br/>              
-                        <strong>M.S. in Computer Science</strong>
-                        <br/>
-                    </td>
-                </tr>
-                <tr valign="TOP">
-                    <td>2015:</td> 
-                    <td>
-                        Loyola University Chicago &mdash; Chicago, IL 
-                        <br/>              
-                        <strong>B.S. in Computer Science</strong>, Cum Laude
-                        <br/>
-                    </td> 
-                </tr>
-            </tbody>
-            </table>
-        </details>
-
-        <details>
-            <!-- <h3 href="#employmenttable" role="button" aria-expanded="false" aria-controls="employmenttable">Professional Experience</h3> -->
-            <summary>Professional Experience</summary>
-            <table id="employmenttable" cellspacing="5" cellpadding="5" width="90%" border="0">
-            <tbody>
-                <tr valign="TOP">
-                    <td>2018:</td> 
-                    <td>
-                            <strong>American Hotel Register Company &mdash; Vernon Hills, IL</strong><br/>              
-                            <strong>Junior Software Developer</strong>
-                            <br/>     
-                        <ul>
-                            <li>Assisted in new development and maintenance of ASP.NET MVC e-commerce website (C# as back-end)</li>
-                            <li>New development included implementing HTML forms with client-side and server-side validation, implementing asynchronous operations in controller, retrieving information (using ADO.NET Entity Data Models and LINQ) from SQL Server database, etc.</li>
-                            <li>Maintenance included product support by responding to user requests and investigating user concerns</li>
-                            <li>Other tasks included code refactorings and adding comments in code files</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr valign="TOP">
-                    <td>2016-2018:</td> 
-                    <td>
-                        <strong>ACS Group &mdash; New Berlin, WI</strong>
-                        <br/>              
-                        <strong>Information Systems Specialist</strong>
-                        <br/>      
-                        <ul>
-                            <li>Constructed a separate <q>Configurator</q> &mdash; an application that allows Sales and Engineering to configure any product offered by the company, generate quotes and sales orders - for each product offered by the company </li>
-                            <li>Tested inside of Microsoft Dynamics which is the platform used to launch the <q>Configurator</q>, while providing Microsoft Dynamics training to end users </li>
-                            <li>Interacted, introduced, and reviewed requirements with Sales, Engineering and Production departments to ensure proper solution is delivered in a timely manner</li>
-                        </ul>
-                    </td> 
-                </tr>
-                <tr valign="TOP">
-                    <td>2014-2015:</td> 
-                    <td>
-                        <strong>Parker Hannifin Corporation &mdash; Lincolnshire, IL</strong> 
-                        <br/>              
-                        <strong>Software Development Intern</strong>
-                        <br/>      
-                        <ul>
-                            <li>Built ASP.NET webforms application (C# for backend) for a Microsoft SQL Server database</li>
-                            <li>Hosted web application on Windows Server 2012 via IIS</li>
-                            <li>Designed barcode labels using Zebra Designer Pro software</li>
-                            <li>Answered help desk tickets and addressed any technical employee concerns related to software and/or hardware</li>
-                        </ul>
-                    </td> 
-                </tr>
-                <tr valign="TOP">
-                    <td>2014:</td> 
-                    <td>
-                        <strong>Northwestern Mutual &mdash; Milwaukee, WI</strong> 
-                        <br/>              
-                        <strong>I.T. Intern</strong>
-                        <br/>      
-                        <ul>
-                            <li>Developed interactive reports using Cognos Report Studio and tested them for format and/or data defects </li>
-                            <li>Learned SQL in order to write queries via Rapid SQL and facilitated in debugging and fixing C# code that caused an application to crash</li>
-                            <li>Used various Microsoft Office applications to collaborate and complete tasks </li>
-                        </ul>
-                    </td> 
-                </tr>
-            </tbody>
-            </table>
-        </details>
-
-        <details>
-            <!-- <h3 href="#websitetechnologiestable" role="button" aria-expanded="false" aria-controls="websitetechnologiestable">Website Technologies</h3> -->
-            <summary>Website Technologies</summary>
-            <table id="websitetechnologiestable" cellspacing="5" cellpadding="5" width="90%" border="0">
+        <div id="detailsdiv">
+            <details>       
+                <!-- <h3 href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable">Education</h3> -->
+                    <!-- <h3>Education</h3> -->
+                <summary>Education</summary>
+                <table id="educationtable" cellspacing="5" cellpadding="5" width="90%" border="0">
                 <tbody>
-                    <thead>
-                        <tr>
-                            <th>Languages and frameworks used (as of now) in the construction of this web portfolio:</th>
-                        </tr>
-                    </thead>
-                    <tr>
+                    <tr valign="TOP">
+                        <td>Mid &mdash; Summer 2021 (Expected Completion):</td> 
                         <td>
-                            <!-- <strong>Technologies used (as of now) in the construction of this web portfolio:</strong> -->
+                            Syracuse University &mdash; Syracuse, NY
+                            <br/>              
+                            <strong>M.S. in Computer Science</strong>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr valign="TOP">
+                        <td>2015:</td> 
+                        <td>
+                            Loyola University Chicago &mdash; Chicago, IL 
+                            <br/>              
+                            <strong>B.S. in Computer Science</strong>, Cum Laude
+                            <br/>
+                        </td> 
+                    </tr>
+                </tbody>
+                </table>
+            </details>
+
+            <details>
+                <!-- <h3 href="#employmenttable" role="button" aria-expanded="false" aria-controls="employmenttable">Professional Experience</h3> -->
+                <summary>Professional Experience</summary>
+                <table id="employmenttable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                <tbody>
+                    <tr valign="TOP">
+                        <td>2018:</td> 
+                        <td>
+                                <strong>American Hotel Register Company &mdash; Vernon Hills, IL</strong><br/>              
+                                <strong>Junior Software Developer</strong>
+                                <br/>     
                             <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Bootstrap</li>
-                                <li>AngularJS</li>
-                                <!-- <li>Visual Studio Code</li> -->
+                                <li>Assisted in new development and maintenance of ASP.NET MVC e-commerce website (C# as back-end)</li>
+                                <li>New development included implementing HTML forms with client-side and server-side validation, implementing asynchronous operations in controller, retrieving information (using ADO.NET Entity Data Models and LINQ) from SQL Server database, etc.</li>
+                                <li>Maintenance included product support by responding to user requests and investigating user concerns</li>
+                                <li>Other tasks included code refactorings and adding comments in code files</li>
                             </ul>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </details>
-
-        <!-- <details>
-            <summary>Projects</summary>
-                <table>
-                    <ul>
-                        <li><a href="C:\Users\srizv\OneDrive - Syracuse University\Syracuse University\Courses\CSE 681 (2)\Project 3\RemoteCodeAnalyzer\RemoteCodeAnalyzer\bin\Debug\RemoteCodeAnalyzer.exe" target="_blank">Remote Code Analyzer</a></li>
-                    </ul>
-                    <tr>
-                        <td><iframe src="C:\Users\srizv\OneDrive - Syracuse University\Syracuse University\Courses\CSE 681 (2)\Project 3\RemoteCodeAnalyzer\RemoteCodeAnalyzer\bin\Debug\RemoteCodeAnalyzer.exe"></iframe></td>
+                    <tr valign="TOP">
+                        <td>2016-2018:</td> 
+                        <td>
+                            <strong>ACS Group &mdash; New Berlin, WI</strong>
+                            <br/>              
+                            <strong>Information Systems Specialist</strong>
+                            <br/>      
+                            <ul>
+                                <li>Constructed a separate <q>Configurator</q> &mdash; an application that allows Sales and Engineering to configure any product offered by the company, generate quotes and sales orders - for each product offered by the company </li>
+                                <li>Tested inside of Microsoft Dynamics which is the platform used to launch the <q>Configurator</q>, while providing Microsoft Dynamics training to end users </li>
+                                <li>Interacted, introduced, and reviewed requirements with Sales, Engineering and Production departments to ensure proper solution is delivered in a timely manner</li>
+                            </ul>
+                        </td> 
                     </tr>
-                </table>      
-        </details> -->
-        
+                    <tr valign="TOP">
+                        <td>2014-2015:</td> 
+                        <td>
+                            <strong>Parker Hannifin Corporation &mdash; Lincolnshire, IL</strong> 
+                            <br/>              
+                            <strong>Software Development Intern</strong>
+                            <br/>      
+                            <ul>
+                                <li>Built ASP.NET webforms application (C# for backend) for a Microsoft SQL Server database</li>
+                                <li>Hosted web application on Windows Server 2012 via IIS</li>
+                                <li>Designed barcode labels using Zebra Designer Pro software</li>
+                                <li>Answered help desk tickets and addressed any technical employee concerns related to software and/or hardware</li>
+                            </ul>
+                        </td> 
+                    </tr>
+                    <tr valign="TOP">
+                        <td>2014:</td> 
+                        <td>
+                            <strong>Northwestern Mutual &mdash; Milwaukee, WI</strong> 
+                            <br/>              
+                            <strong>I.T. Intern</strong>
+                            <br/>      
+                            <ul>
+                                <li>Developed interactive reports using Cognos Report Studio and tested them for format and/or data defects </li>
+                                <li>Learned SQL in order to write queries via Rapid SQL and facilitated in debugging and fixing C# code that caused an application to crash</li>
+                                <li>Used various Microsoft Office applications to collaborate and complete tasks </li>
+                            </ul>
+                        </td> 
+                    </tr>
+                </tbody>
+                </table>
+            </details>
+
+            <details>
+                <!-- <h3 href="#websitetechnologiestable" role="button" aria-expanded="false" aria-controls="websitetechnologiestable">Website Technologies</h3> -->
+                <summary>Website Technologies</summary>
+                <table id="websitetechnologiestable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                    <tbody>
+                        <thead>
+                            <tr>
+                                <th>Languages and frameworks used (as of now) in the construction of this web portfolio:</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>
+                                <!-- <strong>Technologies used (as of now) in the construction of this web portfolio:</strong> -->
+                                <ul>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>Bootstrap</li>
+                                    <li>AngularJS</li>
+                                    <!-- <li>Visual Studio Code</li> -->
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+
+            <!-- <details>
+                <summary>Projects</summary>
+                    <table>
+                        <ul>
+                            <li><a href="C:\Users\srizv\OneDrive - Syracuse University\Syracuse University\Courses\CSE 681 (2)\Project 3\RemoteCodeAnalyzer\RemoteCodeAnalyzer\bin\Debug\RemoteCodeAnalyzer.exe" target="_blank">Remote Code Analyzer</a></li>
+                        </ul>
+                        <tr>
+                            <td><iframe src="C:\Users\srizv\OneDrive - Syracuse University\Syracuse University\Courses\CSE 681 (2)\Project 3\RemoteCodeAnalyzer\RemoteCodeAnalyzer\bin\Debug\RemoteCodeAnalyzer.exe"></iframe></td>
+                        </tr>
+                    </table>      
+            </details> -->       
+        </div>
     </div>
-    
+
     <footer>
         <hr>
         <div>

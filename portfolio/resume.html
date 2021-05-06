@@ -2,10 +2,11 @@
 <html lang="en" ng-app>
 <head>
     <link rel="icon" type="image/png" href="./images/favicon.PNG">
+
     <!-- Bootstrap JavaScript below -->
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
     <!--AngularJS-->
     <script defer src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -25,21 +26,24 @@
     <title>Sameer Rizvi &mdash; Resume</title>
 </head>
 <body> 
-    <nav class="menu docked"></nav>
+    <div class="allButFooter">
+        <nav class="menu docked"></nav>
 
-    <div class="intro">     
-        <header id="resumeintro" class="jumbotron">
-        <!-- <header id="resumeintro"> -->
-            <h1>Resume</h1>
-        </header>
+        <div class="intro">     
+            <header id="resumeintro" class="jumbotron">
+            <!-- <header id="resumeintro"> -->
+                <h1>Resume</h1>
+            </header>
+        </div>
+
+        <hr/>
+
+        <div id="resumediv">
+            <iframe class="pdf" id="resume" name="resume" title="Resume" src="./misc/SameerRizviResume.pdf" width="100%" height="800"></iframe>
+        </div>
     </div>
 
-    <hr/>
-
-    <div id="resumediv">
-        <iframe class="pdf" id="resume" name="resume" title="Resume" src="./misc/SameerRizviResume.pdf" width="100%" height="800"></iframe>
-    </div>
-
+    <!--<footer id="resumefooter">-->
     <footer>
         <hr/>
         <div>
