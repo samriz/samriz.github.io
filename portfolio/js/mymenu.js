@@ -90,7 +90,8 @@
 
     async function PopulateFileWithMenuAsync(extension)
     {
-        var links = new Array("index", "resume", "about", "contact");
+        //var links = new Array("index", "resume", "about", "contact");
+        var links = new Array("index", "about", "contact");
 
         for(var link in links)
         {
