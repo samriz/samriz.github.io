@@ -50,4 +50,4 @@ function CreateMenu(links, extension)
         CreateMenu(links,extension);
     }
 
-    export {CreateMenu, PopulateFileWithMenu};
+    export default PopulateFileWithMenu;
