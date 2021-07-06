@@ -1,11 +1,10 @@
 "use strict";
 
-class Menu
+export default class Menu
 {
     /* links;
     fileExtension; */
 
-    //constructor(className, fileExtension)
     constructor(links, fileExtension)
     {
         this.links = links;
@@ -117,4 +116,4 @@ class Menu
     }  
 }
 
-export default Menu;
+//export default Menu;
