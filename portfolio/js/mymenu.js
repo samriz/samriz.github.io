@@ -1,3 +1,8 @@
-import PopulateFileWithMenuAsync from "./modules/menuasync.js"
+/* import PopulateFileWithMenuAsync from "./modules/menu.js"
+PopulateFileWithMenuAsync(".html"); */
 
-PopulateFileWithMenuAsync(".html");
+import Menu from "./modules/menu.js"
+
+var links = new Array("index", "about", "contact");
+const m = new Menu(links, ".html");
+m.PopulateFileWithMenu();
