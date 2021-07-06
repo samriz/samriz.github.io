@@ -12,19 +12,7 @@ class Menu
         this.fileExtension = fileExtension;
     }
     
-    SetLink(link)
-    {
-        return "./" + link;
-    }
-
-    PopulateFileWithMenu()
-    {
-        for(let link in this.links)
-        {
-            this.links[link] += this.fileExtension;
-        }
-        return this.CreateMenu();
-    }
+    SetLink(link){return "./" + link;}
 
     CreateMenu()
     {
@@ -66,6 +54,15 @@ class Menu
             }            
         }
         return menu;
+    }
+    
+    PopulateFileWithMenu()
+    {
+        for(let link in this.links)
+        {
+            this.links[link] += this.fileExtension;
+        }
+        return this.CreateMenu();
     }
 
     CreateMenuAsync()
@@ -109,6 +106,7 @@ class Menu
         }
         return Promise.resolve(menu);
     }
+    
     async PopulateFileWithMenuAsync()
     {
         for(let link in this.links)
