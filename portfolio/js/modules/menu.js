@@ -16,7 +16,11 @@ export default class Menu
     {
         //var menu = document.getElementsByClassName("menu");
         //var menu = document.querySelector(".menu");
-        var menu = document.querySelectorAll(".menu");
+
+        //any CSS selector can be used
+        //either document.querySelectorAll below can be used
+        //var menu = document.querySelectorAll(".menu");
+        var menu = document.querySelectorAll("nav");
 
         // amount of anchor tags == amount of links
         var aTags = new Array(this.links.length);
