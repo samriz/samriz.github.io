@@ -52,7 +52,7 @@ body
 
 #detailsdiv, #contentsdiv
 {
-    padding-left:5px;
+    padding-left: 5px;
 }
 
 #menuitem0
@@ -97,7 +97,8 @@ body
 {
     /* overflow: hidden; */
     top: 0;
-    background-color: white;
+    background: white;
+    /*background-color: white;*/
     /* background-color: mediumblue; */
     width: 100%;
     border-style: outset;

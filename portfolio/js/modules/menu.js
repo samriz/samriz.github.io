@@ -26,12 +26,12 @@ export default class Menu
         var aTags = new Array(this.links.length);
         var Links = this.links;
 
-        //create anchor tags
+        //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
         {
             aTags[i] = document.createElement("a");
 
-            //set anchor tag attributes below:
+            //set anchor element attributes below:
             //set link here i.e. add "./" to front of links
             aTags[i].setAttribute("href", this.SetLink(Links[i]));
             aTags[i].setAttribute("class", "menuitem");
@@ -58,7 +58,7 @@ export default class Menu
         //place a vertical line between each menu item
         for(let i = 0; i < menu.length; i++)
         {
-            //iterate over anchor tags
+            //iterate over anchor elements
             for(let j = 0; j < aTags.length; j++)
             {
                 menu.item(i).appendChild(aTags[j]);
