@@ -87,21 +87,26 @@ export default class Menu
     {
         //var menu = document.getElementsByClassName("menu");
         //var menu = document.querySelector(".menu");
-        var menu = document.querySelectorAll(".menu");
-        
+
+        //any CSS selector can be used
+        //either document.querySelectorAll below can be used
+        //var menu = document.querySelectorAll(".menu");
+        var menu = document.querySelectorAll("nav");
+
         // amount of anchor tags == amount of links
         var aTags = new Array(this.links.length);
         var Links = this.links;
 
-        //create anchor tags
+        //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
         {
             aTags[i] = document.createElement("a");
-            
-            //set anchor tag attributes below:
+
+            //set anchor element attributes below:
             //set link here i.e. add "./" to front of links
             aTags[i].setAttribute("href", this.SetLink(Links[i]));
-            aTags[i].setAttribute("class", "menuitem");
+            //aTags[i].setAttribute("class", "menuitem");
+            aTags[i].classList.add("menuitem");
             aTags[i].setAttribute("id", "menuitem" + i);
 
             var pageNameTextNode;
@@ -118,17 +123,22 @@ export default class Menu
                 //this is done by slicing from beginning of link text to just before the dot
                 pageNameTextNode = document.createTextNode(Links[i].slice(0,position));
             }
-            aTags[i].appendChild(pageNameTextNode); //add this text to the anchor tag                
+            //add the text to the anchor element
+            //aTags[i].appendChild(pageNameTextNode);  
+            aTags[i].append(pageNameTextNode);              
         }
         //Menu.item(i).innerHTML += " ";
 
         //place a vertical line between each menu item
         for(let i = 0; i < menu.length; i++)
         {
-            //iterate over anchor tags
+            //iterate over anchor elements
             for(let j = 0; j < aTags.length; j++)
             {
+                //add anchor element to menu nav element
                 menu.item(i).appendChild(aTags[j]);
+
+                //add vertical line between links in menu/nav
                 if(j != aTags.length-1) menu.item(i).innerHTML += " | ";
             }            
         }
@@ -141,7 +151,7 @@ export default class Menu
         {
             this.links[link] += this.fileExtension;
         }
-        return this.CreateMenu();
+        return this.CreateMenu(); //return menu to browser/document
     }  
 }
 
