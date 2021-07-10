@@ -1,6 +1,6 @@
 /*element selector styles*/
 
-a
+a:link,a:hover
 { 
     text-decoration: none;
 }
