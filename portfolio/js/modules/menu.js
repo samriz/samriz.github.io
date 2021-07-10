@@ -34,13 +34,14 @@ export default class Menu
             //set anchor element attributes below:
             //set link here i.e. add "./" to front of links
             aTags[i].setAttribute("href", this.SetLink(Links[i]));
-            aTags[i].setAttribute("class", "menuitem");
+            //aTags[i].setAttribute("class", "menuitem");
+            aTags[i].classList.add("menuitem");
             aTags[i].setAttribute("id", "menuitem" + i);
 
-            var textnode;
+            var pageNameTextNode;
             if(Links[i] === "index.html") 
             {
-                textnode = document.createTextNode("sameer rizvi");
+                pageNameTextNode = document.createTextNode("sameer rizvi");
             }
             else 
             {
@@ -49,9 +50,11 @@ export default class Menu
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
-                textnode = document.createTextNode(Links[i].slice(0,position));
+                pageNameTextNode = document.createTextNode(Links[i].slice(0,position));
             }
-            aTags[i].appendChild(textnode);                
+            //add the text to the anchor element
+            //aTags[i].appendChild(pageNameTextNode);  
+            aTags[i].append(pageNameTextNode);              
         }
         //Menu.item(i).innerHTML += " ";
 
@@ -61,7 +64,10 @@ export default class Menu
             //iterate over anchor elements
             for(let j = 0; j < aTags.length; j++)
             {
+                //add anchor element to menu nav element
                 menu.item(i).appendChild(aTags[j]);
+
+                //add vertical line between links in menu/nav
                 if(j != aTags.length-1) menu.item(i).innerHTML += " | ";
             }            
         }
@@ -98,10 +104,10 @@ export default class Menu
             aTags[i].setAttribute("class", "menuitem");
             aTags[i].setAttribute("id", "menuitem" + i);
 
-            var textnode;
+            var pageNameTextNode;
             if(Links[i] === "index.html") 
             {
-                textnode = document.createTextNode("sameer rizvi");
+                pageNameTextNode = document.createTextNode("sameer rizvi");
             }
             else 
             {
@@ -110,9 +116,9 @@ export default class Menu
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
-                textnode = document.createTextNode(Links[i].slice(0,position));
+                pageNameTextNode = document.createTextNode(Links[i].slice(0,position));
             }
-            aTags[i].appendChild(textnode); //add this text to the anchor tag                
+            aTags[i].appendChild(pageNameTextNode); //add this text to the anchor tag                
         }
         //Menu.item(i).innerHTML += " ";
 
