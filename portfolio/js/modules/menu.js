@@ -19,12 +19,12 @@ export default class Menu
 
         //any CSS selector can be used
         //either document.querySelectorAll below can be used
-        //var menu = document.querySelectorAll(".menu");
-        var menu = document.querySelectorAll("nav");
+        //const menu = document.querySelectorAll(".menu");
+        const menu = document.querySelectorAll("nav");
 
         // amount of anchor tags == amount of links
-        var aTags = new Array(this.links.length);
-        var Links = this.links;
+        const aTags = new Array(this.links.length);
+        const Links = this.links;
 
         //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
@@ -46,7 +46,7 @@ export default class Menu
             else 
             {
                 //position = dot's position in link
-                var position = Links[i].search(this.fileExtension);
+                let position = Links[i].search(this.fileExtension);
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
@@ -90,12 +90,12 @@ export default class Menu
 
         //any CSS selector can be used
         //either document.querySelectorAll below can be used
-        //var menu = document.querySelectorAll(".menu");
-        var menu = document.querySelectorAll("nav");
+        //const menu = document.querySelectorAll(".menu");
+        const menu = document.querySelectorAll("nav");
 
         // amount of anchor tags == amount of links
-        var aTags = new Array(this.links.length);
-        var Links = this.links;
+        const aTags = new Array(this.links.length);
+        const Links = this.links;
 
         //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
@@ -117,7 +117,7 @@ export default class Menu
             else 
             {
                 //position = dot's position in link
-                var position = Links[i].search(this.fileExtension);
+                let position = Links[i].search(this.fileExtension);
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
