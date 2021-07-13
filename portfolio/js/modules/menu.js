@@ -51,6 +51,7 @@ export default class Menu
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
                 pageNameTextNode = document.createTextNode(Links[i].slice(0,position));
+                //slice(start,end) - end not included sp start to just before end
             }
             //add the text to the anchor element
             //aTags[i].appendChild(pageNameTextNode);  
