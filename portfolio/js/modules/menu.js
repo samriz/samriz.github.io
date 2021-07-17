@@ -2,12 +2,12 @@
 
 export default class Menu
 {
-    /* links;
-    fileExtension; */
+    #links;
+    #fileExtension;
     constructor(links, fileExtension)
     {
-        this.links = links;
-        this.fileExtension = fileExtension;
+        this.#links = links;
+        this.#fileExtension = fileExtension;
     }
     
     SetLink(link){return "./" + link;}
@@ -23,8 +23,8 @@ export default class Menu
         const menu = document.querySelectorAll("nav");
 
         // amount of anchor tags == amount of links
-        const aTags = new Array(this.links.length);
-        const Links = this.links;
+        const aTags = new Array(this.#links.length);
+        const Links = this.#links;
 
         //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
@@ -46,7 +46,7 @@ export default class Menu
             else 
             {
                 //position = dot's position in link
-                let position = Links[i].search(this.fileExtension);
+                let position = Links[i].search(this.#fileExtension);
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
@@ -77,9 +77,9 @@ export default class Menu
     
     async PopulateDocumentWithMenuAsync()
     {
-        for(let link in this.links)
+        for(let link in this.#links)
         {
-            this.links[link] += this.fileExtension;
+            this.#links[link] += this.#fileExtension;
         }
         await this.CreateMenuAsync(); //waiting on Promise object
     }
@@ -95,8 +95,8 @@ export default class Menu
         const menu = document.querySelectorAll("nav");
 
         // amount of anchor tags == amount of links
-        const aTags = new Array(this.links.length);
-        const Links = this.links;
+        const aTags = new Array(this.#links.length);
+        const Links = this.#links;
 
         //create anchor elements i.e. <a></a>
         for(let i = 0; i < aTags.length; i++)
@@ -118,7 +118,7 @@ export default class Menu
             else 
             {
                 //position = dot's position in link
-                let position = Links[i].search(this.fileExtension);
+                let position = Links[i].search(this.#fileExtension);
 
                 //add text of link name/page name i.e. index, about, etc.
                 //this is done by slicing from beginning of link text to just before the dot
@@ -148,9 +148,9 @@ export default class Menu
     
     PopulateDocumentWithMenu()
     {
-        for(let link in this.links)
+        for(let link in this.#links)
         {
-            this.links[link] += this.fileExtension;
+            this.#links[link] += this.#fileExtension;
         }
         return this.CreateMenu(); //return menu to browser/document
     }  
