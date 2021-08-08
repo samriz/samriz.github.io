@@ -45,7 +45,7 @@ export default class Menu
             }
             else 
             {
-                //position = dot's position in link
+                //position = position of dot in link
                 let position = Links[i].search(this.#fileExtension);
 
                 //add text of link name/page name i.e. index, about, etc.
