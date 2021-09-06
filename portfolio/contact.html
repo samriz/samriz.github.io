@@ -70,7 +70,7 @@
                 <tbody>
                 <tr>
                     <td id="messagetd">
-                            <p><textarea name="message" id="usermessage" ng-model="message" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="50" required></textarea></p>
+                            <p><textarea name="message" id="usermessage" ng-model="message" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea></p>
                             <span class="errortext" ng-show="emailform.message.$touched && emailform.message.$invalid">
                                 <span ng-show="emailform.message.$error.required">Message is required.</span>
                             </span>
