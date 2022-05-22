@@ -3,11 +3,6 @@
 <head>
     <link rel="icon" type="image/png" href="./images/favicon.PNG">
 
-    <!-- Bootstrap JavaScript below -->
-    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
 
@@ -30,8 +25,6 @@
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
     <script type="module" src="./js/mymenu.js"></script>
-    
-    <!-- <script type="text/javascript" src="./js/mymenu.js" defer></script> -->
 
 </head>
 <body>
@@ -59,14 +52,12 @@
         <hr/>
 
         <div id="detailsdiv">
-            <details>       
-                <!-- <h3 href="#educationtable" role="button" aria-expanded="false" aria-controls="educationtable">Education</h3> -->
-                    <!-- <h3>Education</h3> -->
+            <details>
                 <summary>Education</summary>
                 <table id="educationtable" cellspacing="5" cellpadding="5" width="90%" border="0">
                 <tbody>
                     <tr valign="TOP">
-                        <td>Mid &mdash; Summer 2021 (Expected Completion):</td> 
+                        <td>2021:</td> 
                         <td>
                             Syracuse University &mdash; Syracuse, NY
                             <br/>              
@@ -88,10 +79,25 @@
             </details>
 
             <details>
-                <!-- <h3 href="#employmenttable" role="button" aria-expanded="false" aria-controls="employmenttable">Professional Experience</h3> -->
                 <summary>Professional Experience</summary>
                 <table id="employmenttable" cellspacing="5" cellpadding="5" width="90%" border="0">
                 <tbody>
+                    <tr valign="TOP">
+                        <td>2021:</td> 
+                        <td>
+                                <strong>Spinutech, LLC &mdash; Remote</strong><br/>              
+                                <strong>Web Developer</strong>
+                                <br/>     
+                            <ul>
+                                <li>New development and maintenance of ASP.NET web applications including applications built using MVC and Webforms frameworks; languages that include C#, VB.NET, JavaScript, html, VBScript, and razor; and MySQL and Microsoft SQL Server databases for backend development</li>
+                                <li>Custom development related to proprietary CMS</li>
+                                <li>Coordinate with Project Managers to deliver products and solutions to clients</li>
+                                <li>Collaborate with other developers/team members to improve efficiency and timely delivery of solutions</li>
+                                <li>Write clean, consistent code matching established guidelines and patterns</li>
+                                <li>Leverage work, from website maintenance tasks to new development on existing sites, for several different clients and deliver quality solutions within deadlines</li>
+                            </ul>
+                        </td>
+                    </tr>
                     <tr valign="TOP">
                         <td>2018:</td> 
                         <td>
@@ -154,7 +160,6 @@
             </details>
 
             <details>
-                <!-- <h3 href="#websitetechnologiestable" role="button" aria-expanded="false" aria-controls="websitetechnologiestable">Website Technologies</h3> -->
                 <summary>Website Technologies</summary>
                 <table id="websitetechnologiestable" cellspacing="5" cellpadding="5" width="90%" border="0">
                     <tbody>
@@ -171,7 +176,6 @@
                                     <li class="floatinglist">CSS</li>
                                     <li class="floatinglist">JavaScript</li>
                                     <li class="floatinglist">Bootstrap</li>
-                                    <li class="floatinglist">AngularJS</li>
                                 </ul>
                             </td>
                         </tr>
@@ -181,7 +185,7 @@
 
             <details>
                 <summary>Skills</summary>
-                <table id="websitetechnologiestable" cellspacing="5" cellpadding="5" width="90%" border="0">
+                <table id="skillstable" cellspacing="5" cellpadding="5" width="90%" border="0">
                     <tbody>
                         <thead>
                             <tr>
@@ -192,7 +196,7 @@
                             <td>
                                 <ul>
                                     <li class="floatinglist">C#</li>
-                                    <li class="floatinglist">C++</li>
+                                    <li class="floatinglist">Visual Basic</li>
                                     <li class="floatinglist">HTML</li>
                                     <li class="floatinglist">CSS</li>
                                     <li class="floatinglist">JavaScript</li>
@@ -208,12 +212,12 @@
                         <tr>
                             <td>
                                 <ul>
-                                    <li class="floatinglist">.NET</li>
-                                    <li class="floatinglist">ASP.NET</li>
-                                    <li class="floatinglist">Entity Framework</li>
-                                    <li class="floatinglist">Windows Presentation Foundation</li>
-                                    <li class="floatinglist">Bootstrap</li>
-                                    <li class="floatinglist">AngularJS</li>
+                                    <li class="floatinglist">ASP.NET
+                                        <ul>
+                                            <li>MVC</li>
+                                            <li>Web Forms</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
@@ -227,12 +231,13 @@
                             <td>
                                 <ul>
                                     <li class="floatinglist">Visual Studio</li>
-                                    <li class="floatinglist">Vidual Studio Code</li>
-                                    <li class="floatinglist">GNU nano</li>
+                                    <li class="floatinglist">Visual Studio Code</li>
+                                    <li class="floatinglist">GitHub Desktop</li>
+                                    <li class="floatinglist">SQL Server Management Studio</li>
+                                    <li class="floatinglist">MySQL Workbench</li>
                                 </ul>
                             </td>
                         </tr>
-
                     </tbody>
                 </table>
             </details>
@@ -273,6 +278,4 @@
     </footer>
 </body>
 
-<!--My JavaScript below-->
-<!-- <script type="text/javascript" src="./js/mymenu.js"></script> -->
 </html>
