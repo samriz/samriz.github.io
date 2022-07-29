@@ -12,7 +12,7 @@ export default class Menu
     
     SetLink(link){return "./" + link;}
 
-    CreateMenuAsync()
+    async CreateMenuAsync()
     {
         //var menu = document.getElementsByClassName("menu");
         //var menu = document.querySelector(".menu");
@@ -72,7 +72,8 @@ export default class Menu
                 if(j != aTags.length-1) menu.item(i).innerHTML += " | ";
             }            
         }
-        return Promise.resolve(menu);
+        //return Promise.resolve(menu);
+        return menu;
     }
     
     async PopulateDocumentWithMenuAsync()
