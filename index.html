@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
 <head>
-    <link rel="icon" type="image/png" href="./images/favicon.PNG">
-    <!-- Bootstrap JavaScript below -->
-    <!-- <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-
-    <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
-
     <meta charset="UTF-8"/>
     <meta name="author" content="Sameer Rizvi"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,27 +8,21 @@
     <meta name="description" content="Home page for my website.">
     <meta name="theme-color" content="#1a324c">
 
+     <link rel="icon" type="image/png" href="./images/favicon.PNG"/>
     <!-- Bootstrap CSS below -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-
     <!--My CSS below-->
     <link rel="stylesheet" href="./css/styles.css"/>
-
-    <!--<title>Sameer Rizvi &mdash; Home</title>-->
-    <title>Sameer Rizvi - Home</title>
-
+    <title>Sameer Rizvi &mdash; Home</title>
     <!--My JavaScript below-->
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
-    <script type="module" src="./js/mymenu.js"></script>
-    
-    <!-- <script type="text/javascript" src="./js/mymenu.js" defer></script> -->
-    
+    <script type="module" src="./js/mymenu.js"></script>    
 </head>
+
 <body>
     <div class="allButFooter">
         <nav class="menu docked"></nav>
-
         <div class="intro">
             <!-- <header id="homeintro" class="jumbotron">
                 <h1>Sameer Rizvi</h1>
@@ -50,6 +35,7 @@
         </div>
 
         <hr/>
+        
         <main>
         <div id="contentsdiv">
             <!-- <h4>Contents</h4> -->
@@ -84,10 +70,8 @@
         </div>        
         <p>Copyright &copy; <span id="fullyear"></span> Sameer Rizvi</p>    
         <script>
-            var d = new Date();
-            document.getElementById("fullyear").innerHTML = d.getFullYear();
+            document.getElementById("fullyear").innerHTML = new Date().getFullYear();
         </script>  
     </footer>
 </body>
-
 </html>

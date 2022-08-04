@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
-<head>
-    <link rel="icon" type="image/png" href="./images/favicon.PNG">
-
-    <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
-
+<head>    
     <meta charset="UTF-8"/>
     <meta name="author" content="Sameer Rizvi"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="keywords" content="Sameer, Rizvi, Profile, sameer, rizvi, profile, Sameer Rizvi, sameer rizvi"/>
     <meta name="description" content="Contact me by filling out the  contact form.">
 
+    <link rel="icon" type="image/png" href="./images/favicon.PNG"/>
     <!-- Bootstrap CSS below -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
-
     <!--My CSS below-->
     <link rel="stylesheet" href="./css/styles.css"/>
-
-    <!-- <title>Sameer Rizvi &mdash; Contact</title> -->
-    <title>Sameer Rizvi - Contact</title>
-
+    <title>Sameer Rizvi &mdash; Contact</title>
     <!--My JavaScript below-->
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
     <script type="module" src="./js/mymenu.js"></script>
-    
-    <!-- <script type="text/javascript" src="./js/mymenu.js" defer></script> -->
-
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
 </head>
+
 <body>
     <div class="allButFooter">
         <nav class="menu docked"></nav>
@@ -43,17 +35,17 @@
                     <form name="emailform" id="emailform" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f" method="POST">
                         <p style="text-align:center;">To contact me, please fill out and submit the form below.</p>
                         <td>
-                                <p><input type="text" name="name" id="username" ng-model="name" placeholder="Name" class="form-control" minlength="1" maxlength="50" required/></p>
-                                <span class="errortext" ng-show="emailform.name.$touched && emailform.name.$invalid">
-                                    <span ng-show="emailform.name.$error.required">Name is required.</span>
-                                </span>
+                            <p><input type="text" name="name" id="username" ng-model="name" placeholder="Name" class="form-control" minlength="1" maxlength="50" required/></p>
+                            <span class="errortext" ng-show="emailform.name.$touched && emailform.name.$invalid">
+                                <span ng-show="emailform.name.$error.required">Name is required.</span>
+                            </span>
                         </td>
                         <td>
-                                <p><input type="email" name="email" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" maxlength="50" required/></p>
-                                <span class="errortext" ng-show="emailform.email.$touched && emailform.email.$invalid">
-                                    <span ng-show="emailform.email.$error.required">Email is required.</span>
-                                    <span ng-show="emailform.email.$invalid">Incorrect format.</span>
-                                </span>
+                            <p><input type="email" name="email" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" maxlength="50" required/></p>
+                            <span class="errortext" ng-show="emailform.email.$touched && emailform.email.$invalid">
+                                <span ng-show="emailform.email.$error.required">Email is required.</span>
+                                <span ng-show="emailform.email.$invalid">Incorrect format.</span>
+                            </span>
                         </td>
                     </tr>
                 </tbody>
@@ -62,11 +54,11 @@
                 <tbody>
                 <tr>
                     <td id="messagetd">
-                            <p><textarea name="message" id="usermessage" ng-model="message" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea></p>
-                            <span class="errortext" ng-show="emailform.message.$touched && emailform.message.$invalid">
-                                <span ng-show="emailform.message.$error.required">Message is required.</span>
-                            </span>
-                            <p><button type="submit" name="send" id="emailsender" class="btn btn-outline-secondary" ng-disabled="emailform.name.$invalid || emailform.email.$invalid || emailform.message.$invalid">Send</button></p>
+                        <p><textarea name="message" id="usermessage" ng-model="message" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea></p>
+                        <span class="errortext" ng-show="emailform.message.$touched && emailform.message.$invalid">
+                            <span ng-show="emailform.message.$error.required">Message is required.</span>
+                        </span>
+                        <p><button type="submit" name="send" id="emailsender" class="btn btn-outline-secondary" ng-disabled="emailform.name.$invalid || emailform.email.$invalid || emailform.message.$invalid">Send</button></p>
                     </td>
                 </tr>
                 </tbody>
@@ -92,10 +84,8 @@
         </div>
         <p>Copyright &copy; <span id="fullyear"></span> Sameer Rizvi</p>    
         <script>
-            var d = new Date();
-            document.getElementById("fullyear").innerHTML = d.getFullYear();
+            document.getElementById("fullyear").innerHTML = new Date().getFullYear();
         </script>  
     </footer>  
 </body>
-
 </html>
