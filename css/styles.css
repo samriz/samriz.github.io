@@ -1,6 +1,6 @@
 /*element selector styles*/
 
-a:link,a:hover
+a:link,a:hover,a:visited,a:active
 { 
     text-decoration: none;
 }
@@ -8,8 +8,7 @@ a:link,a:hover
 footer
 {
     text-align: center;
-}
-  
+}  
 
 /* footer
 {
@@ -77,12 +76,6 @@ body
     margin: 0 20px;
 }
 
-.textlink
-{
-    text-decoration: underline;
-    color: mediumblue;
-}
-
 .errortext
 {
     color: red;
@@ -99,7 +92,6 @@ body
     top: 0;
     background: white;
     /*background-color: white;*/
-    /* background-color: mediumblue; */
     width: 100%;
     border-style: outset;
 }
@@ -107,7 +99,6 @@ body
 .menuitem
 {
     font-size: 20px;
-    /* color: white; */
 }
 
 .docked
