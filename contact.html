@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>    
     <meta charset="UTF-8"/>
     <meta name="author" content="Sameer Rizvi"/>
@@ -17,8 +17,6 @@
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
     <script type="module" src="./js/mymenu.js"></script>
-    <!--AngularJS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js" defer></script>
 </head>
 
 <body>
@@ -28,24 +26,23 @@
             <h1>Contact Me</h1>      
         </main>
         <hr/>
-        <div id="formdiv">
+        <div id="divForm">
             <table id="contacttable">
                 <tbody>
                     <tr>
-                    <form name="emailform" id="emailform" action="https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f" method="POST">
+                    <form id="contactForm" action="">
                         <p style="text-align:center;">To contact me, please fill out and submit the form below.</p>
                         <td>
-                            <p><input type="text" name="name" id="username" ng-model="name" placeholder="Name" class="form-control" minlength="1" maxlength="50" required/></p>
-                            <span class="errortext" ng-show="emailform.name.$touched && emailform.name.$invalid">
-                                <span ng-show="emailform.name.$error.required">Name is required.</span>
-                            </span>
+                            <p>
+                                <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="1" maxlength="50" required/>
+                                <small id="errorName" class="errortext">Invalid name.</small>
+                            </p>
                         </td>
                         <td>
-                            <p><input type="email" name="email" id="useremail" ng-model="useremail" placeholder="Email" class="form-control" minlength="1" maxlength="50" required/></p>
-                            <span class="errortext" ng-show="emailform.email.$touched && emailform.email.$invalid">
-                                <span ng-show="emailform.email.$error.required">Email is required.</span>
-                                <span ng-show="emailform.email.$invalid">Incorrect format.</span>
-                            </span>
+                            <p>
+                                <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="1" maxlength="50"/>
+                                <small id="errorEmail" class="errortext">Invalid email.</small>
+                            </p>
                         </td>
                     </tr>
                 </tbody>
@@ -54,18 +51,18 @@
                 <tbody>
                 <tr>
                     <td id="messagetd">
-                        <p><textarea name="message" id="usermessage" ng-model="message" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea></p>
-                        <span class="errortext" ng-show="emailform.message.$touched && emailform.message.$invalid">
-                            <span ng-show="emailform.message.$error.required">Message is required.</span>
-                        </span>
-                        <p><button type="submit" name="send" id="emailsender" class="btn btn-outline-secondary" ng-disabled="emailform.name.$invalid || emailform.email.$invalid || emailform.message.$invalid">Send</button></p>
+                        <p>
+                            <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea>
+                            <small id="errorMessage" class="errortext">Invalid message.</small>
+                        </p>
+                        <p><button type="submit" id="submit" class="btn btn-outline-secondary">Send</button></p>
                     </td>
                 </tr>
                 </tbody>
-                </table>
-                </form>
+            </table>
+                    </form>
         </div>
-        <p id="mailmessage"></p>
+        <div id="submitSuccess" style="text-align:center"><h2>Your message was sent!</h2></div>
     </div>
 
     <footer>
@@ -88,4 +85,72 @@
         </script>  
     </footer>  
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+<script>
+    $("#errorName").hide();
+    $("#errorEmail").hide();
+    $("#errorMessage").hide();
+    $("#submitSuccess").hide();
+
+    var form = document.getElementById("contactForm");
+    form.addEventListener("submit", formSubmit);
+
+    /**
+     * @param{Event} e
+    */
+    function formSubmit(e) 
+    {
+        e.preventDefault()
+        if(isValidEmail(document.getElementById("contactEmail").value))
+        {
+            $("#errorEmail").hide();
+            const formData = new FormData(document.getElementById("contactForm"));
+            //formData.append('name', document.querySelector('input[name="name"]').value);
+            //formData.append('email', document.querySelector('input[name="email"]').value);
+            //formData.append('message', document.querySelector('textarea[name="message"]').value);
+
+            fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
+            {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                console.log(response);
+                $("#divForm").hide();
+                $("#submitSuccess").show();
+            })
+            .catch(error => console.log(error))
+        }
+        else $("#errorEmail").show();
+    }
+
+    /**
+     * @param{string} email
+    */
+    function isValidEmail(email)
+    {            
+        let validEmail = false;
+        if(email.length === 0) return validEmail;
+
+        let indexOfAt = 0;
+        let indexOfDot = 0;
+
+        if(email.includes('@'))
+        {
+            indexOfAt = email.search('@');
+            console.log(`index of @: ${indexOfAt}`);
+        }
+        if(email.includes('.'))
+        {
+            indexOfDot = email.indexOf('.');
+            console.log(`index of .: ${indexOfDot}`);
+        }
+        if(indexOfDot > indexOfAt + 1) 
+        {
+            validEmail = true;
+            console.log(`Email address is valid: ${validEmail}`);
+        }
+        return validEmail;
+    }
+</script>
 </html>
