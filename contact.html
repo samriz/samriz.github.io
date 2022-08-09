@@ -34,13 +34,13 @@
                         <p style="text-align:center;">To contact me, please fill out and submit the form below.</p>
                         <td>
                             <p>
-                                <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="1" maxlength="50" required/>
+                                <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="2" maxlength="100" oninput="if(this.value.length < 1 || this.value.length > 100) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"/>
                                 <small id="errorName" class="errortext">Invalid name.</small>
                             </p>
                         </td>
                         <td>
                             <p>
-                                <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="1" maxlength="50"/>
+                                <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
                                 <small id="errorEmail" class="errortext">Invalid email.</small>
                             </p>
                         </td>
@@ -52,7 +52,7 @@
                 <tr>
                     <td id="messagetd">
                         <p>
-                            <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="1" maxlength="250" required></textarea>
+                            <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="2" maxlength="1000" oninput="if(this.value.length < 1 || this.value.length > 1000) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"></textarea>
                             <small id="errorMessage" class="errortext">Invalid message.</small>
                         </p>
                         <p><button type="submit" id="submit" class="btn btn-outline-secondary">Send</button></p>
@@ -100,14 +100,14 @@
     */
     function formSubmit(e) 
     {
-        e.preventDefault()
-        if(isValidEmail(document.getElementById("contactEmail").value))
+        e.preventDefault();
+        let name = document.getElementById("contactName");
+        let email = document.getElementById("contactEmail").value;
+        let message = document.getElementById("contactMessage");
+
+        if(isValid(name, 100) && isValidEmail(email) && isValid(message, 1000))
         {
-            $("#errorEmail").hide();
             const formData = new FormData(document.getElementById("contactForm"));
-            //formData.append('name', document.querySelector('input[name="name"]').value);
-            //formData.append('email', document.querySelector('input[name="email"]').value);
-            //formData.append('message', document.querySelector('textarea[name="message"]').value);
 
             fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
             {
@@ -121,7 +121,27 @@
             })
             .catch(error => console.log(error))
         }
-        else $("#errorEmail").show();
+    }
+
+    /**
+     * @param{HTMLElement} elem
+     * @param{number} maxLength
+    */
+    function isValid(elem, maxLength)
+    {
+        let validName = false;
+        if(elem.value.length < 1 || elem.value.length > maxLength) 
+        {
+            elem.style.borderColor = 'red'; 
+            elem.style.borderWidth = '2px';
+        } 
+        else 
+        {
+            elem.style.borderColor = 'green'; 
+            elem.style.borderWidth = '2px';
+            validName = true;
+        }
+        return validName;
     }
 
     /**
@@ -130,7 +150,7 @@
     function isValidEmail(email)
     {            
         let validEmail = false;
-        if(email.length === 0) return validEmail;
+        //if(email.length === 0) return validEmail;
 
         let indexOfAt = 0;
         let indexOfDot = 0;
@@ -138,17 +158,27 @@
         if(email.includes('@'))
         {
             indexOfAt = email.search('@');
-            console.log(`index of @: ${indexOfAt}`);
+            //console.log(`index of "@": ${indexOfAt}`);
         }
         if(email.includes('.'))
         {
             indexOfDot = email.indexOf('.');
-            console.log(`index of .: ${indexOfDot}`);
+            //console.log(`index of ".": ${indexOfDot}`);
         }
         if(indexOfDot > indexOfAt + 1) 
         {
-            validEmail = true;
-            console.log(`Email address is valid: ${validEmail}`);
+            validEmail = true;            
+            //console.log(`Email address is valid: ${validEmail}`);
+        }
+        if(validEmail)
+        {
+            document.getElementById("contactEmail").style.borderColor = "green";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
+        }
+        else
+        {
+            document.getElementById("contactEmail").style.borderColor = "red";
+            document.getElementById("contactEmail").style.borderWidth = "2px";
         }
         return validEmail;
     }
