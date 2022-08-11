@@ -98,7 +98,7 @@
     /**
      * @param{Event} e
     */
-    function formSubmit(e) 
+    async function formSubmit(e) 
     {
         e.preventDefault();
         let name = document.getElementById("contactName");
@@ -109,17 +109,22 @@
         {
             const formData = new FormData(document.getElementById("contactForm"));
 
-            fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
+            const response = await fetch("https://getform.io/f/7f565008-7e7c-4d62-9f66-8ccab6c4f51f",
             {
                 method: "POST",
                 body: formData,
-            })
-            .then(response => {
-                console.log(response);
+            });
+
+            if(response.ok)
+            {
+                $("#divForm").hide();
+                $("#submitSuccess").show();
+            }
+            /*.then(response => {                
                 $("#divForm").hide();
                 $("#submitSuccess").show();
             })
-            .catch(error => console.log(error))
+            .catch(error => console.log(error))*/
         }
     }
 
