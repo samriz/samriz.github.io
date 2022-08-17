@@ -25,42 +25,52 @@
         <main id="messageintro" class="intro jumbotron">
             <h1>Contact Me</h1>      
         </main>
-        <hr/>
-        <div id="divForm">
+
+        <p style="text-align:center;">To contact me, please fill out and submit the form below.</p>
+
+        <div id="divForm">            
             <table id="contacttable">
                 <tbody>
-                    <tr>
                     <form id="contactForm" action="">
-                        <p style="text-align:center;">To contact me, please fill out and submit the form below.</p>
+                    <tr>                        
                         <td>
                             <p>
                                 <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="2" maxlength="100" oninput="if(this.value.length < 1 || this.value.length > 100) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"/>
-                                <small id="errorName" class="errortext">Invalid name.</small>
+                                <!-- <small id="errorName" class="errortext">Invalid name.</small> -->
                             </p>
                         </td>
-                        <td>
+                        <td id="tdEmail">
                             <p>
                                 <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
-                                <small id="errorEmail" class="errortext">Invalid email.</small>
+                                <!-- <small id="errorEmail" class="errortext">Invalid email.</small> -->
                             </p>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-            <table id="contacttable">
-                <tbody>
-                <tr>
-                    <td id="messagetd">
-                        <p>
-                            <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="2" maxlength="1000" oninput="if(this.value.length < 1 || this.value.length > 1000) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"></textarea>
-                            <small id="errorMessage" class="errortext">Invalid message.</small>
-                        </p>
-                        <p><button type="submit" id="submit" class="btn btn-outline-secondary">Send</button></p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                    <tr id="trEmail">
+                        <td>
+                            <p>
+                                <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
+                                <!-- <small id="errorEmail" class="errortext">Invalid email.</small> -->
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="messagetd" colspan=2>
+                            <p>
+                                <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="2" maxlength="1000" oninput="if(this.value.length < 1 || this.value.length > 1000) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"></textarea>
+                                <!-- <small id="errorMessage" class="errortext">Invalid message.</small> -->
+                            </p>
+                            <p>
+                                <button type="submit" id="submit" class="btn btn-outline-secondary">Send</button>
+                            </p>
+                        </td>
+                    </tr>
                     </form>
+                </tbody>
+            </table>
+        </div>
+        <div id="divFormMobile">
+
         </div>
         <div id="submitSuccess" style="text-align:center"><h2>Your message was sent!</h2></div>
     </div>
@@ -87,13 +97,14 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
 <script>
-    $("#errorName").hide();
+    /* $("#errorName").hide();
     $("#errorEmail").hide();
-    $("#errorMessage").hide();
+    $("#errorMessage").hide(); */
     $("#submitSuccess").hide();
 
     var form = document.getElementById("contactForm");
-    form.addEventListener("submit", formSubmit);
+    form.onsubmit = formSubmit;
+    //form.addEventListener("submit", formSubmit);
 
     /**
      * @param{Event} e
