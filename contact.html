@@ -32,43 +32,32 @@
                 <tbody>
                     <form id="contactForm" action="">
                     <tr>                        
-                        <td>
+                        <td colspan="1">
                             <p>
-                                <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="2" maxlength="100" oninput="if(this.value.length < 1 || this.value.length > 100) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"/>
-                                <!-- <small id="errorName" class="errortext">Invalid name.</small> -->
+                                <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="2" maxlength="100" oninput="if(this.value.length < 2 || this.value.length > 100) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"/>
                             </p>
                         </td>
-                        <td id="tdEmail">
+                        <td id="tdEmail" colspan="1">
                             <p>
                                 <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
-                                <!-- <small id="errorEmail" class="errortext">Invalid email.</small> -->
                             </p>
                         </td>
                     </tr>
-                    <!-- <tr id="trEmail">
-                        <td>
-                            <p>
-                                <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
-                            </p>
-                        </td>
-                    </tr> -->
                     <tr>
-                        <td id="messagetd" colspan=2>
+                        <td id="messagetd" colspan="2">
                             <p>
-                                <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="2" maxlength="1000" oninput="if(this.value.length < 1 || this.value.length > 1000) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"></textarea>
-                                <!-- <small id="errorMessage" class="errortext">Invalid message.</small> -->
-                            </p>
-                            <p>
-                                <button type="submit" id="submit" class="btn btn-outline-secondary">Send</button>
-                            </p>
+                                <textarea name="message" id="contactMessage" placeholder="Message" class="form-control" rows="5" cols="50" minlength="2" maxlength="1000" oninput="if(this.value.length < 2 || this.value.length > 1000) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"></textarea>
+                            </p>                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="tdSend">
+                            <button type="submit" id="btnSend" class="btn btn-outline-secondary">Send</button>                            
                         </td>
                     </tr>
                     </form>
                 </tbody>
             </table>
-        </div>
-        <div id="divFormMobile">
-
         </div>
         <div id="submitSuccess" style="text-align:center"><h2>Your message was sent!</h2></div>
     </div>
@@ -95,10 +84,32 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
 <script>
-    /* $("#errorName").hide();
-    $("#errorEmail").hide();
-    $("#errorMessage").hide(); */
+    let onMobile = false;
     $("#submitSuccess").hide();
+
+    viewportResize();
+    window.onresize = viewportResize;
+
+    function viewportResize()
+    {
+        let tdEmail = document.getElementById("tdEmail");
+        let btnSend = document.getElementById("btnSend");
+        let tdSend = document.getElementById("tdSend");
+
+        if(window.visualViewport.width < 400)
+        {
+            onMobile = true;                     
+            if(btnSend.classList.contains("form-control") === false) 
+            {
+                btnSend.classList.add("form-control");
+                tdSend.setAttribute("colspan", "2");
+            }            
+        }
+        else
+        {
+            if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
+        }
+    }
 
     var form = document.getElementById("contactForm");
     form.onsubmit = formSubmit;
@@ -144,7 +155,7 @@
     function isValid(elem, maxLength)
     {
         let validName = false;
-        if(elem.value.length < 1 || elem.value.length > maxLength) 
+        if(elem.value.length < 2 || elem.value.length > maxLength) 
         {
             elem.style.borderColor = 'red'; 
             elem.style.borderWidth = '2px';
