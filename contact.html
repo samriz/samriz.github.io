@@ -82,13 +82,37 @@
         </script>  
     </footer>  
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
 <script>
     let onMobile = false;
     $("#submitSuccess").hide();
 
-    viewportResize();
+    viewportInit();
     window.onresize = viewportResize;
+
+    function viewportInit()
+    {
+        let tdEmail = document.getElementById("tdEmail");
+        let btnSend = document.getElementById("btnSend");
+        let tdSend = document.getElementById("tdSend");
+        const table = document.getElementsByTagName("table")[0];
+
+        if(window.visualViewport.width < 400)
+        {
+            onMobile = true;                     
+            if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
+            tdSend.setAttribute("colspan", "2");
+
+            let trEmailMobile = table.insertRow(1);
+            trEmailMobile.id = "trEmailMobile";
+            trEmailMobile.appendChild(tdEmail);
+        }
+        else
+        {
+            if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
+        }
+    }
 
     function viewportResize()
     {
@@ -99,11 +123,8 @@
         if(window.visualViewport.width < 400)
         {
             onMobile = true;                     
-            if(btnSend.classList.contains("form-control") === false) 
-            {
-                btnSend.classList.add("form-control");
-                tdSend.setAttribute("colspan", "2");
-            }            
+            if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
+            tdSend.setAttribute("colspan", "2");
         }
         else
         {
@@ -175,26 +196,12 @@
     function isValidEmail(email)
     {            
         let validEmail = false;
-        //if(email.length === 0) return validEmail;
-
         let indexOfAt = 0;
         let indexOfDot = 0;
 
-        if(email.includes('@'))
-        {
-            indexOfAt = email.search('@');
-            //console.log(`index of "@": ${indexOfAt}`);
-        }
-        if(email.includes('.'))
-        {
-            indexOfDot = email.indexOf('.');
-            //console.log(`index of ".": ${indexOfDot}`);
-        }
-        if(indexOfDot > indexOfAt + 1) 
-        {
-            validEmail = true;            
-            //console.log(`Email address is valid: ${validEmail}`);
-        }
+        if(email.includes('@')) indexOfAt = email.search('@');
+        if(email.includes('.')) indexOfDot = email.indexOf('.');
+        if(indexOfDot > indexOfAt + 1) validEmail = true;
         if(validEmail)
         {
             document.getElementById("contactEmail").style.borderColor = "green";
