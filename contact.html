@@ -16,6 +16,7 @@
     <!--My JavaScript below-->
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
+    <script type="module" src="./js/modules/mobilemenu.js"></script>
     <script type="module" src="./js/mymenu.js"></script>
 </head>
 
@@ -105,6 +106,9 @@
         else
         {
             if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
+
+            let trEmailMobile = document.getElementById("trEmailMobile");
+            if(trEmailMobile != null && table.contains(trEmailMobile)) table.removeChild(trEmailMobile);
         }
     }
 
@@ -113,16 +117,27 @@
         let tdEmail = document.getElementById("tdEmail");
         let btnSend = document.getElementById("btnSend");
         let tdSend = document.getElementById("tdSend");
+        const table = document.getElementsByTagName("table")[0];
 
         if(window.visualViewport.width < 400)
         {
             onMobile = true;                     
             if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
             tdSend.setAttribute("colspan", "2");
+
+            if(document.getElementById("trEmailMobile") === null)
+            {
+                let trEmailMobile = table.insertRow(1);
+                trEmailMobile.id = "trEmailMobile";
+                trEmailMobile.appendChild(tdEmail);
+            }
         }
         else
         {
             if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
+
+            let trEmailMobile = document.getElementById("trEmailMobile");
+            if(trEmailMobile != null && table.contains(trEmailMobile)) table.removeChild(trEmailMobile);
         }
     }
 
