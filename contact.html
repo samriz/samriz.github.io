@@ -93,7 +93,7 @@
         let tdSend = document.getElementById("tdSend");
         const table = document.getElementsByTagName("table")[0];
 
-        if(window.visualViewport.width < 400)
+        if(window.visualViewport.width < 640)
         {
             onMobile = true;                     
             if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
@@ -107,8 +107,9 @@
         {
             if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
 
+            //table.rows[0].insertCell(tdEmail);
             let trEmailMobile = document.getElementById("trEmailMobile");
-            if(trEmailMobile != null && table.contains(trEmailMobile)) table.removeChild(trEmailMobile);
+            if(trEmailMobile != null && table.contains(trEmailMobile)) trEmailMobile.removeChild();
         }
     }
 
@@ -119,10 +120,10 @@
         let tdSend = document.getElementById("tdSend");
         const table = document.getElementsByTagName("table")[0];
 
-        if(window.visualViewport.width < 500)
+        if(window.visualViewport.width < 640)
         {
             onMobile = true;                     
-            if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
+            if(btnSend.classList.contains("form-control") === false) btnSend.classList.add("form-control");
             tdSend.setAttribute("colspan", "2");
 
             if(document.getElementById("trEmailMobile") === null)
@@ -136,8 +137,9 @@
         {
             if(btnSend.classList.contains("form-control")) btnSend.classList.remove("form-control");
 
+            table.rows[0].appendChild(tdEmail);
             let trEmailMobile = document.getElementById("trEmailMobile");
-            if(trEmailMobile != null && table.contains(trEmailMobile)) table.removeChild(trEmailMobile);
+            if(trEmailMobile != null && table.contains(trEmailMobile)) trEmailMobile.remove();
         }
     }
 
