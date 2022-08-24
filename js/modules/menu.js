@@ -4,10 +4,19 @@ export default class Menu
 {
     #links;
     #fileExtension;
+    #aTags;
+
+    /**
+     * @param {string[]} links 
+     * @param {string} fileExtension 
+     */
     constructor(links, fileExtension)
     {
         this.#links = links;
         this.#fileExtension = fileExtension;
+
+        // amount of anchor tags == amount of links
+        this.#aTags = new Array(this.#links.length);
     }
     
     SetLink(link){return "./" + link;}
@@ -20,25 +29,25 @@ export default class Menu
         //any CSS selector can be used
         //either document.querySelectorAll below can be used
         //const menu = document.querySelectorAll(".menu");
-        const menu = document.querySelectorAll("nav");
+        const menu = document.querySelectorAll(".menu");
 
         // amount of anchor tags == amount of links
-        const aTags = new Array(this.#links.length);
+        
         const Links = this.#links;
 
         //create anchor elements i.e. <a></a>
-        for(let i = 0; i < aTags.length; i++)
+        for(let i = 0; i < this.#aTags.length; i++)
         {
-            aTags[i] = document.createElement("a");
+            this.#aTags[i] = document.createElement("a");
 
             //set anchor element attributes below:
             //set link here i.e. add "./" to front of links
-            aTags[i].setAttribute("href", this.SetLink(Links[i]));
-            //aTags[i].setAttribute("class", "menuitem");
-            aTags[i].classList.add("menuitem");
-            aTags[i].setAttribute("id", "menuitem" + i);
+            this.#aTags[i].setAttribute("href", this.SetLink(Links[i]));
+            //this.#aTags[i].setAttribute("class", "menuitem");
+            this.#aTags[i].classList.add("menuitem");
+            this.#aTags[i].setAttribute("id", "menuitem" + i);
 
-            var pageNameTextNode;
+            let pageNameTextNode;
             if(Links[i] === "index.html") 
             {
                 pageNameTextNode = document.createTextNode("sameer rizvi");
@@ -54,22 +63,24 @@ export default class Menu
                 //slice(start,end) - end not included sp start to just before end
             }
             //add the text to the anchor element
-            //aTags[i].appendChild(pageNameTextNode);  
-            aTags[i].append(pageNameTextNode);              
+            //this.#aTags[i].appendChild(pageNameTextNode);  
+            //console.log(this.#aTags);
+            this.#aTags[i].append(pageNameTextNode);
+            //console.log(this.#aTags);      
         }
         //Menu.item(i).innerHTML += " ";
-
+        let aT = this.#aTags;
         //place a vertical line between each menu item
         for(let i = 0; i < menu.length; i++)
         {
             //iterate over anchor elements
-            for(let j = 0; j < aTags.length; j++)
+            for(let j = 0; j < aT.length; j++)
             {
                 //add anchor element to menu nav element
-                menu.item(i).appendChild(aTags[j]);
+                menu.item(i).appendChild(aT[j]);
 
                 //add vertical line between links in menu/nav
-                if(j != aTags.length-1) menu.item(i).innerHTML += " | ";
+                if(j != aT.length-1) menu.item(i).innerHTML += " | ";
             }            
         }
         //return Promise.resolve(menu);
@@ -95,21 +106,19 @@ export default class Menu
         //const menu = document.querySelectorAll(".menu");
         const menu = document.querySelectorAll("nav");
 
-        // amount of anchor tags == amount of links
-        const aTags = new Array(this.#links.length);
         const Links = this.#links;
 
         //create anchor elements i.e. <a></a>
-        for(let i = 0; i < aTags.length; i++)
+        for(let i = 0; i < this.#aTags.length; i++)
         {
-            aTags[i] = document.createElement("a");
+            this.#aTags[i] = document.createElement("a");
 
             //set anchor element attributes below:
             //set link here i.e. add "./" to front of links
-            aTags[i].setAttribute("href", this.SetLink(Links[i]));
-            //aTags[i].setAttribute("class", "menuitem");
-            aTags[i].classList.add("menuitem");
-            aTags[i].setAttribute("id", "menuitem" + i);
+            this.#aTags[i].setAttribute("href", this.SetLink(Links[i]));
+            //this.#aTags[i].setAttribute("class", "menuitem");
+            this.#aTags[i].classList.add("menuitem");
+            this.#aTags[i].setAttribute("id", "menuitem" + i);
 
             var pageNameTextNode;
             if(Links[i] === "index.html") 
@@ -126,8 +135,8 @@ export default class Menu
                 pageNameTextNode = document.createTextNode(Links[i].slice(0,position));
             }
             //add the text to the anchor element
-            //aTags[i].appendChild(pageNameTextNode);  
-            aTags[i].append(pageNameTextNode);              
+            //this.#aTags[i].appendChild(pageNameTextNode);  
+            this.#aTags[i].append(pageNameTextNode);              
         }
         //Menu.item(i).innerHTML += " ";
 
@@ -135,13 +144,13 @@ export default class Menu
         for(let i = 0; i < menu.length; i++)
         {
             //iterate over anchor elements
-            for(let j = 0; j < aTags.length; j++)
+            for(let j = 0; j < this.#aTags.length; j++)
             {
                 //add anchor element to menu nav element
-                menu.item(i).appendChild(aTags[j]);
+                menu.item(i).appendChild(this.#aTags[j]);
 
                 //add vertical line between links in menu/nav
-                if(j != aTags.length-1) menu.item(i).innerHTML += " | ";
+                if(j != this.#aTags.length-1) menu.item(i).innerHTML += " | ";
             }            
         }
         return menu;
@@ -154,7 +163,9 @@ export default class Menu
             this.#links[link] += this.#fileExtension;
         }
         return this.CreateMenu(); //return menu to browser/document
-    }  
+    }
+
+    GetAnchors(){return this.#aTags;}
 }
 
 //export default Menu;
