@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="author" content="Sameer Rizvi"/>
@@ -14,9 +14,12 @@
     <!--My CSS below-->
     <link rel="stylesheet" href="./css/styles.css"/>
     <title>Sameer Rizvi &mdash; Home</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--My JavaScript below-->
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
+    <script type="module" src="./js/modules/mobilemenu.js"></script>
     <script type="module" src="./js/mymenu.js"></script>    
 </head>
 
@@ -24,19 +27,13 @@
     <div class="allButFooter">
         <nav class="menu docked"></nav>
         <div class="intro">
-            <!-- <header id="homeintro" class="jumbotron">
-                <h1>Sameer Rizvi</h1>
-                <h2>Web Portfolio</h2>
-            </header> -->
             <main id="homeintro" class="jumbotron">
                 <h1>Sameer Rizvi</h1>
-                <!--<h2>Web Portfolio</h2>-->
             </main>
         </div>
         
         <main>
         <div id="contentsdiv">
-            <!-- <h4>Contents</h4> -->
             <p>Welcome to my official Web Portfolio.</p>
             <p>Here, you'll find information pertaining to my academic and professional experiences. This includes, but is not limited to, the following:</p>
             <ul>

@@ -13,6 +13,8 @@
     <!--My CSS below-->
     <link rel="stylesheet" href="./css/styles.css"/>
     <title>Sameer Rizvi &mdash; Contact</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!--My JavaScript below-->
     <!--modules are automatically deferred-->
     <script type="module" src="./js/modules/menu.js"></script>
@@ -77,8 +79,7 @@
         </script>  
     </footer>  
 </body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+  
 <script>
     let onMobile = false;
     $("#submitSuccess").hide();
@@ -96,7 +97,7 @@
         if(window.visualViewport.width < 640)
         {
             onMobile = true;                     
-            if(btnSend.classList.contains("form-control") === false)btnSend.classList.add("form-control");
+            if(btnSend.classList.contains("form-control") === false) btnSend.classList.add("form-control");
             tdSend.setAttribute("colspan", "2");
 
             let trEmailMobile = table.insertRow(1);
@@ -145,7 +146,6 @@
 
     var form = document.getElementById("contactForm");
     form.onsubmit = formSubmit;
-    //form.addEventListener("submit", formSubmit);
 
     /**
      * @param{Event} e
