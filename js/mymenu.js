@@ -13,6 +13,21 @@ await CreateMenu(menu);
 await CreateMobileMenu(menu);
 await viewportResize();
 window.onresize = viewportResize;
+document.getElementById("selectMobileMenu").addEventListener("focusin", MobileMenuFocusIn);
+document.getElementById("selectMobileMenu").addEventListener("focusout", MobileMenuFocusOut);
+
+function MobileMenuFocusIn()
+{
+    this.style.borderColor =
+      "rgb(145,194,247)";
+      this.style.borderWidth = "2px";
+}
+
+function MobileMenuFocusOut()
+{
+    this.style.borderColor = "black";
+    this.style.borderWidth = "1px";
+}
 
 async function viewportResize()
 {
@@ -21,6 +36,7 @@ async function viewportResize()
         if(nav.classList.contains("menu")) nav.classList.replace("menu", "mobilemenu");
         $("#divMenuItems").hide();
         $("#divMobileMenuItems").show();
+        
     }
     else
     {
