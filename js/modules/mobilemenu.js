@@ -4,6 +4,9 @@ import Menu from "./menu.js";
 
 export default class MobileMenu 
 {
+    #dropdown;
+    #hamburgerMenu;
+
   /**
    * @param {string[]} links
    * @param {string} fileExtension
@@ -20,9 +23,8 @@ export default class MobileMenu
   /**
    * @param {string[]} links
    * @param {string} fileExtension
-   * @returns HTMLSelectElement
    */
-  async CreateMobileMenuSelectAsync(links, fileExtension) 
+  async CreateDropdownMenuAsync(links, fileExtension) 
   {
       let anchors = await this.GetMenuItemsAsync(links, fileExtension);
       console.log(anchors);
@@ -45,6 +47,35 @@ export default class MobileMenu
           select.appendChild(newOption);
       }
       select.classList.add("selectMenu");
-      return select;
+      this.#dropdown = select;
   }
+
+  /**
+   * @param {string[]} links
+   * @param {string} fileExtension
+   */
+  async CreateHamburgerMenuAsync(links, fileExtension)
+  {
+        let anchors = await this.GetMenuItemsAsync(links, fileExtension);
+        const listMenu = document.createElement("ul");
+        listMenu.id = "hamburgerList";
+        for(let i = 0; i < anchors.length; i++)
+        {
+            let li = document.createElement("li");
+            li.appendChild(anchors[i]);
+            li.classList.add("hamburgerListItem");
+            listMenu.appendChild(li);
+        }
+        this.#hamburgerMenu = listMenu;
+  }
+
+  /**
+   * @returns HTMLSelectElement
+   */
+  GetDropdownMenu(){return this.#dropdown;}
+  
+  /**
+   * @returns HTMLUListElement
+   */
+  GetHamburgerMenu(){return this.#hamburgerMenu;}
 }

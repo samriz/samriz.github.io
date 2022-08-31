@@ -10,11 +10,17 @@ const mobilemenu = new MobileMenu();
 const menu = new Menu(links, ".html");
 
 await CreateMenu(menu);
-await CreateMobileMenu(menu);
+//await CreateDropdownMenu(menu);
+await CreateHamburgerMenu(menu);
 await viewportResize();
 window.onresize = viewportResize;
-document.getElementById("selectMobileMenu").addEventListener("focusin", MobileMenuFocusIn);
-document.getElementById("selectMobileMenu").addEventListener("focusout", MobileMenuFocusOut);
+$("#hamburgerList").hide();
+//document.getElementById("selectMobileMenu").addEventListener("focusin", MobileMenuFocusIn);
+//document.getElementById("selectMobileMenu").addEventListener("focusout", MobileMenuFocusOut);
+document.getElementById("hamburgerButton").addEventListener("click", () => {
+    if ($("#hamburgerList").is(":visible")) $("#hamburgerList").hide();
+    else $("#hamburgerList").show();
+});
 
 function MobileMenuFocusIn()
 {
@@ -31,12 +37,12 @@ function MobileMenuFocusOut()
 
 async function viewportResize()
 {
-    if(window.visualViewport.width < 640)
+    if(window.visualViewport.width <= 640)
     {    
         if(nav.classList.contains("menu")) nav.classList.replace("menu", "mobilemenu");
         $("#divMenuItems").hide();
         $("#divMobileMenuItems").show();
-        
+        $("#hamburgerList").hide();
     }
     else
     {
@@ -69,7 +75,7 @@ async function CreateMenu(menu)
 /**
  * @param {Menu} menu 
  */
-async function CreateMobileMenu(menu)
+async function CreateDropdownMenu(menu)
 {
     const newDiv = document.createElement("div");
     newDiv.id = "divMobileMenuItems";
@@ -77,8 +83,34 @@ async function CreateMobileMenu(menu)
     const nav = document.getElementsByTagName("nav")[0];
     nav.appendChild(newDiv);
 
-    let selectMobileMenu = await mobilemenu.CreateMobileMenuSelectAsync(menu.GetLinks(), menu.GetFileExtension());
+    await mobilemenu.CreateDropdownMenuAsync(menu.GetLinks(), menu.GetFileExtension());
+    let selectMobileMenu = mobilemenu.GetDropdownMenu();
     (document.getElementById("divMobileMenuItems")).appendChild(selectMobileMenu);
+}
+
+async function CreateHamburgerMenu()
+{
+    const newDiv = document.createElement("div");
+    newDiv.id = "divMobileMenuItems";
+
+    const nav = document.getElementsByTagName("nav")[0];
+    nav.appendChild(newDiv);
+
+    await mobilemenu.CreateHamburgerMenuAsync(menu.GetLinks(), menu.GetFileExtension());
+    let hamburger = mobilemenu.GetHamburgerMenu();
+
+    const button = document.createElement("button");
+    button.id = "hamburgerButton";
+    button.classList.add("nav-toggle");
+    document.getElementById("divMobileMenuItems").appendChild(button);
+
+    const i = document.createElement("i");
+    i.id = "hamburgerITag";
+    i.classList.add("fas");
+    i.classList.add("fa-bars");
+
+    document.getElementById("hamburgerButton").appendChild(i);
+    document.getElementById("divMobileMenuItems").appendChild(hamburger);
 }
 
 /**

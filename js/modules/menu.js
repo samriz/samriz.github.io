@@ -44,13 +44,16 @@ export default class Menu
         this.#aTags = aTags;
     }
 
+    /**
+     * @returns Array()
+     */
     GetMenuItems(){return this.#aTags;}
     GetLinks(){return this.#links;}
     GetFileExtension(){return this.#fileExtension;}
 
     /**
      * @param {string} link 
-     * @returns 
+     * @returns string
      */
     SetLink(link){return "./" + link;}    
 }
