@@ -22,9 +22,8 @@ document.getElementById("hamburgerButton").addEventListener("click", () => {
 
 function MobileMenuFocusIn()
 {
-    this.style.borderColor =
-      "rgb(145,194,247)";
-      this.style.borderWidth = "2px";
+    this.style.borderColor = "rgb(145,194,247)";
+    this.style.borderWidth = "2px";
 }
 
 function MobileMenuFocusOut()
@@ -82,7 +81,7 @@ async function CreateDropdownMenu(menu)
     nav.appendChild(newDiv);
 
     await mobilemenu.CreateDropdownMenuAsync();
-    let selectMobileMenu = mobilemenu.GetDropdownMenu();
+    let selectMobileMenu = mobilemenu.DropdownMenu;
     (document.getElementById("divMobileMenuItems")).appendChild(selectMobileMenu);
 }
 
@@ -95,7 +94,7 @@ async function CreateHamburgerMenu()
     nav.appendChild(newDiv);
 
     await mobilemenu.CreateHamburgerMenuAsync();
-    let hamburger = mobilemenu.GetHamburgerMenu();
+    let hamburger = mobilemenu.HamburgerMenu;
 
     const button = document.createElement("button");
     button.id = "hamburgerButton";
@@ -120,13 +119,13 @@ async function AddMenuItemsToDocumentAsync(menu)
     //place a vertical line between each menu item
     for(let i = 0; i < divMenuItems.length; i++)
     {
-        for(let j = 0; j < menu.GetMenuItems().length; j++)
+        for(let j = 0; j < menu.MenuItems.length; j++)
         {
             //add anchor element to menu nav element
             //menu.item(i).appendChild(aT[j]);
-            divMenuItems[i].appendChild(menu.GetMenuItems()[j]);
+            divMenuItems[i].appendChild(menu.MenuItems[j]);
             //add vertical line between links in menu/nav
-            if (j != menu.GetMenuItems().length - 1) divMenuItems[i].innerHTML += " | ";
+            if (j != menu.MenuItems.length - 1) divMenuItems[i].innerHTML += " | ";
         }            
     }
 }

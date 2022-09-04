@@ -4,7 +4,7 @@ import Menu from "./menu.js"
 
 export default class DesktopMenu extends Menu
 {
-    #aTags;
+    #anchors;
 
     /**
      * @param {string[]} links 
@@ -18,13 +18,13 @@ export default class DesktopMenu extends Menu
     async CreateMenuItemsAsync()
     {               
         let Links = this.links;
-        let aTags = new Array(Links.length);
-        for(let i = 0; i < aTags.length; i++)
+        let anchors = new Array(Links.length);
+        for(let i = 0; i < anchors.length; i++)
         {
-            aTags[i] = document.createElement("a");
-            aTags[i].href = this.SetLink(Links[i]);
-            aTags[i].classList.add("menuitem");
-            aTags[i].id = "menuitem" + i;
+            anchors[i] = document.createElement("a");
+            anchors[i].href = this.Link = Links[i];
+            anchors[i].classList.add("menuitem");
+            anchors[i].id = "menuitem" + i;
 
             let pageNameTextNode;
             if(Links[i] === "index.html") pageNameTextNode = document.createTextNode("sameer rizvi");           
@@ -38,19 +38,19 @@ export default class DesktopMenu extends Menu
                 //slice(start,end) - end not included sp start to just before end
             }
             //add the text to the anchor element
-            aTags[i].append(pageNameTextNode);
+            anchors[i].append(pageNameTextNode);
         }
-        this.#aTags = aTags;
+        this.#anchors = anchors;
     }
 
     /**
      * @returns Array()
      */
-    GetMenuItems(){return this.#aTags;}
+    get MenuItems(){return this.#anchors;}
 
     /**
      * @param {string} link 
      * @returns string
      */
-    SetLink(link){return "./" + link;}    
+    set Link(link){return "./" + link;}    
 }
