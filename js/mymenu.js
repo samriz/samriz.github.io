@@ -1,13 +1,13 @@
 "use strict";
 
-import Menu from "./modules/menu.js";
+import DesktopMenu from "./modules/desktopmenu.js";
 import MobileMenu from "./modules/mobilemenu.js";
 
 const links = new Array("index", "about", "contact");
 const nav = document.getElementsByTagName("nav")[0];
 
-const mobilemenu = new MobileMenu();
-const menu = new Menu(links, ".html");
+const menu = new DesktopMenu(links, ".html");
+const mobilemenu = new MobileMenu(menu.Links, menu.FileExtension);
 
 await CreateMenu(menu);
 //await CreateDropdownMenu(menu);
@@ -15,8 +15,6 @@ await CreateHamburgerMenu(menu);
 await viewportResize();
 window.onresize = viewportResize;
 $("#hamburgerList").hide();
-//document.getElementById("selectMobileMenu").addEventListener("focusin", MobileMenuFocusIn);
-//document.getElementById("selectMobileMenu").addEventListener("focusout", MobileMenuFocusOut);
 document.getElementById("hamburgerButton").addEventListener("click", () => {
     if ($("#hamburgerList").is(":visible")) $("#hamburgerList").hide();
     else $("#hamburgerList").show();
@@ -53,13 +51,13 @@ async function viewportResize()
 }
 
 /**
- * @param {Menu} menu 
+ * @param {DesktopMenu} menu 
  */
 async function CreateMenu(menu)
 {
-    for(let link in menu.GetLinks())
+    for(let link in menu.Links)
     {
-        menu.GetLinks()[link] += menu.GetFileExtension();
+        menu.Links[link] += menu.FileExtension;
     }                
     
     await menu.CreateMenuItemsAsync();
@@ -73,7 +71,7 @@ async function CreateMenu(menu)
 }
 
 /**
- * @param {Menu} menu 
+ * @param {DesktopMenu} menu 
  */
 async function CreateDropdownMenu(menu)
 {
@@ -83,7 +81,7 @@ async function CreateDropdownMenu(menu)
     const nav = document.getElementsByTagName("nav")[0];
     nav.appendChild(newDiv);
 
-    await mobilemenu.CreateDropdownMenuAsync(menu.GetLinks(), menu.GetFileExtension());
+    await mobilemenu.CreateDropdownMenuAsync();
     let selectMobileMenu = mobilemenu.GetDropdownMenu();
     (document.getElementById("divMobileMenuItems")).appendChild(selectMobileMenu);
 }
@@ -96,7 +94,7 @@ async function CreateHamburgerMenu()
     const nav = document.getElementsByTagName("nav")[0];
     nav.appendChild(newDiv);
 
-    await mobilemenu.CreateHamburgerMenuAsync(menu.GetLinks(), menu.GetFileExtension());
+    await mobilemenu.CreateHamburgerMenuAsync();
     let hamburger = mobilemenu.GetHamburgerMenu();
 
     const button = document.createElement("button");
@@ -114,7 +112,7 @@ async function CreateHamburgerMenu()
 }
 
 /**
- * @param {Menu} menu 
+ * @param {DesktopMenu} menu 
  */
 async function AddMenuItemsToDocumentAsync(menu)
 {    

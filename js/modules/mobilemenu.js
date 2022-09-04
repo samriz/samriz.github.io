@@ -1,32 +1,41 @@
 "use strict";
 
 import Menu from "./menu.js";
+import DesktopMenu from "./desktopmenu.js";
 
-export default class MobileMenu 
+export default class MobileMenu extends Menu
 {
     #dropdown;
     #hamburgerMenu;
+
+    /**
+     * @param {string[]} links 
+     * @param {string} fileExtension 
+     */
+    constructor(links, fileExtension)
+    {
+        super(links, fileExtension);
+    }
 
   /**
    * @param {string[]} links
    * @param {string} fileExtension
    * @returns Array()
    */
-  async GetMenuItemsAsync(links, fileExtension) 
+  async GetMenuItemsAsync() 
   {
-      const menu = new Menu(links, fileExtension);
-      await menu.CreateMenuItemsAsync();
-      //console.log(menu.GetMenuItems());
-      return menu.GetMenuItems();
+      const desktopmenu = new DesktopMenu(this.links, this.fileExtension);
+      await desktopmenu.CreateMenuItemsAsync();
+      return desktopmenu.GetMenuItems();
   }
 
   /**
    * @param {string[]} links
    * @param {string} fileExtension
    */
-  async CreateDropdownMenuAsync(links, fileExtension) 
+  async CreateDropdownMenuAsync() 
   {
-      let anchors = await this.GetMenuItemsAsync(links, fileExtension);
+      let anchors = await this.GetMenuItemsAsync(this.links, this.fileExtension);
       console.log(anchors);
 
       const select = document.createElement("select");
@@ -54,9 +63,9 @@ export default class MobileMenu
    * @param {string[]} links
    * @param {string} fileExtension
    */
-  async CreateHamburgerMenuAsync(links, fileExtension)
+  async CreateHamburgerMenuAsync()
   {
-        let anchors = await this.GetMenuItemsAsync(links, fileExtension);
+        let anchors = await this.GetMenuItemsAsync(this.links, this.fileExtension);
         const listMenu = document.createElement("ul");
         listMenu.id = "hamburgerList";
         for(let i = 0; i < anchors.length; i++)
