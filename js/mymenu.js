@@ -113,7 +113,7 @@ async function AddMenuItemsToDocumentAsync(menu)
             //menu.item(i).appendChild(aT[j]);
             divMenuItems[i].appendChild(menu.MenuItems[j]);
             //add vertical line between links in menu/nav
-            if (j != menu.MenuItems.length - 1) divMenuItems[i].innerHTML += " | ";
+            if (j != menu.MenuItems.length - 1) divMenuItems[i].innerHTML += "|";
         }            
     }
 }
