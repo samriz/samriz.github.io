@@ -23,23 +23,7 @@ body
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* nav a:first-of-type{
-    font-size: 1.5em;
-} */
-
-#detailsdiv td
-{
-    border-style: solid;
-    border-width: thin;
-    width: auto;
-}
-
 /*id selector styles*/
-
-#detailsdiv, #contentsdiv
-{
-    padding-left: 5px;
-}
 
 /* #menuitem0
 {
@@ -72,6 +56,13 @@ body
     padding: 0%;
     margin: 0px;
     background-color: white;
+}
+
+#divAboutDetails td
+{
+    border-style: solid;
+    border-width: thin;
+    width: auto;
 }
 
 /*class selector styles*/
@@ -131,23 +122,13 @@ body
     color: purple
 }
 
-.nav_overlay 
-{
-    height: 100%; 
-    width: 99%; 
-    padding:0 4%; 
-    background: #001D41; 
-    position: fixed; 
-    top: 0; 
-    overflow: auto; 
-    display: none;
-    z-index: 500; 
-    -webkit-overflow-scrolling: touch; 
-    color: #fff;
-}
-
 .hamburgerListItem
 {
     text-align: center;
     border-bottom: 1px solid; 
+}
+
+.leftPad
+{
+    padding-left: 5px;
 }

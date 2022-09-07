@@ -20,18 +20,6 @@ document.getElementById("hamburgerButton").addEventListener("click", () => {
     else $("#hamburgerList").show();
 });
 
-function MobileMenuFocusIn()
-{
-    this.style.borderColor = "rgb(145,194,247)";
-    this.style.borderWidth = "2px";
-}
-
-function MobileMenuFocusOut()
-{
-    this.style.borderColor = "black";
-    this.style.borderWidth = "1px";
-}
-
 async function viewportResize()
 {
     if(window.visualViewport.width <= 640)
@@ -128,4 +116,16 @@ async function AddMenuItemsToDocumentAsync(menu)
             if (j != menu.MenuItems.length - 1) divMenuItems[i].innerHTML += " | ";
         }            
     }
+}
+
+function MobileMenuFocusIn()
+{
+    this.style.borderColor = "rgb(145,194,247)";
+    this.style.borderWidth = "2px";
+}
+
+function MobileMenuFocusOut()
+{
+    this.style.borderColor = "black";
+    this.style.borderWidth = "1px";
 }
