@@ -50,7 +50,7 @@ export default class MobileMenu extends Menu
                 select.appendChild(zeroOption);
             }
             let newOption;
-            if (anchors[i].innerText === "sameer rizvi") newOption = new Option("home", anchors[i].href);
+            if (anchors[i].innerText === "sameer") newOption = new Option("home", anchors[i].href);
             else newOption = new Option(anchors[i].innerText, anchors[i].href);
 
            select.appendChild(newOption);

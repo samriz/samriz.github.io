@@ -27,7 +27,7 @@ export default class DesktopMenu extends Menu
             anchors[i].id = "menuitem" + i;
 
             let pageNameTextNode;
-            if(Links[i] === "index.html") pageNameTextNode = document.createTextNode("sameer rizvi");           
+            if(Links[i] === "index.html") pageNameTextNode = document.createTextNode("sameer");           
             else 
             {
                 //position = position of dot in link
