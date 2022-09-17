@@ -34,7 +34,7 @@
                             <input type="text" name="name" id="contactName" placeholder="Name" class="form-control" minlength="2" maxlength="100" oninput="if(this.value.length < 2 || this.value.length > 100) {this.style.borderColor = 'red'; this.style.borderWidth = '2px';} else {this.style.borderColor = 'green'; this.style.borderWidth = '2px';}"/>
                         </td>
                         <td id="tdEmail" colspan="1">
-                            <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" onclick="console.log(getComputedStyle(this).borderColor);console.log(getComputedStyle(this).borderWidth);" oninput="isValidEmail(this.value)"/>
+                            <input type="email" name="email" id="contactEmail" placeholder="Email" class="form-control" minlength="2" maxlength="50" oninput="isValidEmail(this.value)"/>
                         </td>
                     </tr>
                     <tr>
